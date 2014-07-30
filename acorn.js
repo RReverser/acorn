@@ -1701,14 +1701,14 @@
 
   // Parse a list of variable declarations.
 
-  function parseVar(node, noIn, kind) {
+  function parseVar(node, noInOf, kind) {
     node.declarations = [];
     node.kind = kind;
     for (;;) {
       var decl = startNode();
       decl.id = options.ecmaVersion >= 6 ? toAssignable(parseExprAtom()) : parseIdent();
       checkLVal(decl.id, true);
-      decl.init = eat(_eq) ? parseExpression(true, noIn) : (kind === _const.keyword ? unexpected() : null);
+      decl.init = eat(_eq) ? parseExpression(true, noInOf) : (kind === _const.keyword ? unexpected() : null);
       node.declarations.push(finishNode(decl, "VariableDeclarator"));
       if (!eat(_comma)) break;
     }
@@ -1727,12 +1727,12 @@
   // sequences (in argument lists, array literals, or object literals)
   // or the `in` operator (in for loops initalization expressions).
 
-  function parseExpression(noComma, noIn) {
-    var expr = parseMaybeAssign(noIn);
+  function parseExpression(noComma, noInOf) {
+    var expr = parseMaybeAssign(noInOf);
     if (!noComma && tokType === _comma) {
       var node = startNodeFrom(expr);
       node.expressions = [expr];
-      while (eat(_comma)) node.expressions.push(parseMaybeAssign(noIn));
+      while (eat(_comma)) node.expressions.push(parseMaybeAssign(noInOf));
       return finishNode(node, "SequenceExpression");
     }
     return expr;
@@ -1741,15 +1741,15 @@
   // Parse an assignment expression. This includes applications of
   // operators like `+=`.
 
-  function parseMaybeAssign(noIn) {
-    var left = parseMaybeConditional(noIn);
+  function parseMaybeAssign(noInOf) {
+    var left = parseMaybeConditional(noInOf);
     if (tokType.isAssign) {
       var node = startNodeFrom(left);
       node.operator = tokVal;
       node.left = tokType === _eq ? toAssignable(left) : left;
       checkLVal(left);
       next();
-      node.right = parseMaybeAssign(noIn);
+      node.right = parseMaybeAssign(noInOf);
       return finishNode(node, "AssignmentExpression");
     }
     return left;
@@ -1757,14 +1757,14 @@
 
   // Parse a ternary conditional (`?:`) operator.
 
-  function parseMaybeConditional(noIn) {
-    var expr = parseExprOps(noIn);
+  function parseMaybeConditional(noInOf) {
+    var expr = parseExprOps(noInOf);
     if (eat(_question)) {
       var node = startNodeFrom(expr);
       node.test = expr;
       node.consequent = parseExpression(true);
       expect(_colon);
-      node.alternate = parseExpression(true, noIn);
+      node.alternate = parseExpression(true, noInOf);
       return finishNode(node, "ConditionalExpression");
     }
     return expr;
@@ -1772,8 +1772,8 @@
 
   // Start the precedence parser.
 
-  function parseExprOps(noIn) {
-    return parseExprOp(parseMaybeUnary(noIn), -1, noIn);
+  function parseExprOps(noInOf) {
+    return parseExprOp(parseMaybeUnary(noInOf), -1, noInOf);
   }
 
   // Parse binary operators with the operator precedence parsing
@@ -1782,18 +1782,18 @@
   // defer further parser to one of its callers when it encounters an
   // operator that has a lower precedence than the set it is parsing.
 
-  function parseExprOp(left, minPrec, noIn) {
+  function parseExprOp(left, minPrec, noInOf) {
     var prec = tokType.binop;
-    if (prec != null && (!noIn || tokType !== _in)) {
+    if (prec != null && (!noInOf || tokType !== _in)) {
       if (prec > minPrec) {
         var node = startNodeFrom(left);
         node.left = left;
         node.operator = tokVal;
         var op = tokType;
         next();
-        node.right = parseExprOp(parseMaybeUnary(), prec, noIn);
+        node.right = parseExprOp(parseMaybeUnary(), prec, noInOf);
         var exprNode = finishNode(node, (op === _logicalOR || op === _logicalAND) ? "LogicalExpression" : "BinaryExpression");
-        return parseExprOp(exprNode, minPrec, noIn);
+        return parseExprOp(exprNode, minPrec, noInOf);
       }
     }
     return left;
@@ -1801,7 +1801,7 @@
 
   // Parse unary operators, both prefix and postfix.
 
-  function parseMaybeUnary(noIn) {
+  function parseMaybeUnary(noInOf) {
     if (tokType.prefix) {
       var node = startNode(), update = tokType.isUpdate;
       node.operator = tokVal;
@@ -1815,7 +1815,7 @@
         raise(node.start, "Deleting local variable in strict mode");
       return finishNode(node, update ? "UpdateExpression" : "UnaryExpression");
     }
-    var expr = parseExprSubscripts(noIn);
+    var expr = parseExprSubscripts(noInOf);
     while (tokType.postfix && !canInsertSemicolon()) {
       var node = startNodeFrom(expr);
       node.operator = tokVal;
@@ -1830,8 +1830,8 @@
 
   // Parse call, dot, and `[]`-subscript expressions.
 
-  function parseExprSubscripts(noIn) {
-    return parseSubscripts(parseExprAtom(), false, noIn);
+  function parseExprSubscripts(noInOf) {
+    return parseSubscripts(parseExprAtom(), false, noInOf);
   }
 
   function isTypeDescriptor(expr) {
@@ -1845,7 +1845,7 @@
     }
   }
 
-  function parseSubscripts(base, noCalls, noIn) {
+  function parseSubscripts(base, noCalls, noInOf) {
     if (eat(_dot)) {
       var node = startNodeFrom(base);
       node.object = base;
@@ -1881,7 +1881,7 @@
       node.tag = base;
       node.quasi = parseTemplate();
       return parseSubscripts(finishNode(node, "TaggedTemplateExpression"), noCalls);
-    } else if (isTypeDescriptor(base) && tokType === _name && !canInsertSemicolon() && !(noIn && tokVal === 'of')) {
+    } else if (isTypeDescriptor(base) && tokType === _name && !canInsertSemicolon() && !(noInOf && tokVal === 'of')) {
       var node = startNodeFrom(base);
       var id = parseIdent(), isArrow = eat(_arrow);
       if (isArrow) {
