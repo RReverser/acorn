@@ -14846,9 +14846,9 @@ testFail("({ obj:20 }) = 42", "Assigning to rvalue (1:7)", {ecmaVersion: 6});
 
 testFail("( { get x() {} } ) = 0", "Unexpected token (1:8)", {ecmaVersion: 6});
 
-testFail("x \n is y", "Unexpected token (2:4)", {ecmaVersion: 6});
+testFail("x \n is y", "Unexpected token (2:5)", {ecmaVersion: 6});
 
-testFail("x \n isnt y", "Unexpected token (2:6)", {ecmaVersion: 6});
+testFail("x \n isnt y", "Unexpected token (2:7)", {ecmaVersion: 6});
 
 testFail("function default() {}", "Unexpected token (1:9)", {ecmaVersion: 6});
 
@@ -14904,7 +14904,7 @@ testFail("(10) => 00", "Unexpected token (1:1)", {ecmaVersion: 6});
 
 testFail("(10, 20) => 00", "Unexpected token (1:1)", {ecmaVersion: 6});
 
-testFail("yield v", "Unexpected token (1:6)", {ecmaVersion: 6});
+testFail("yield v", "Unexpected token (1:7)", {ecmaVersion: 6});
 
 testFail("yield 10", "Unexpected token (1:6)", {ecmaVersion: 6});
 
@@ -15109,11 +15109,11 @@ test("(function () { yield* 10 })", {
   locations: true
 });
 
-testFail("(function() { \"use strict\"; f(yield v) })", "Unexpected token (1:36)", {ecmaVersion: 6});
+testFail("(function() { \"use strict\"; f(yield v) })", "Unexpected token (1:37)", {ecmaVersion: 6});
 
 testFail("var obj = { *test** }", "Unexpected token (1:17)", {ecmaVersion: 6});
 
-testFail("class A extends yield B { }", "Unexpected token (1:22)", {ecmaVersion: 6});
+testFail("class A extends yield B { }", "Unexpected token (1:24)", {ecmaVersion: 6});
 
 testFail("class default", "Unexpected token (1:6)", {ecmaVersion: 6});
 

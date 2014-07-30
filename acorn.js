@@ -54,7 +54,7 @@
     // be either 3, or 5, or 6. This influences support for strict
     // mode, the set of reserved words, support for getters and
     // setters and other features.
-    ecmaVersion: 5,
+    ecmaVersion: 6,
     // Turn on `strictSemicolons` to prevent the parser from doing
     // automatic semicolon insertion.
     strictSemicolons: false,
@@ -1773,7 +1773,7 @@
   // Start the precedence parser.
 
   function parseExprOps(noIn) {
-    return parseExprOp(parseMaybeUnary(), -1, noIn);
+    return parseExprOp(parseMaybeUnary(noIn), -1, noIn);
   }
 
   // Parse binary operators with the operator precedence parsing
@@ -1801,7 +1801,7 @@
 
   // Parse unary operators, both prefix and postfix.
 
-  function parseMaybeUnary() {
+  function parseMaybeUnary(noIn) {
     if (tokType.prefix) {
       var node = startNode(), update = tokType.isUpdate;
       node.operator = tokVal;
@@ -1815,7 +1815,7 @@
         raise(node.start, "Deleting local variable in strict mode");
       return finishNode(node, update ? "UpdateExpression" : "UnaryExpression");
     }
-    var expr = parseExprSubscripts();
+    var expr = parseExprSubscripts(noIn);
     while (tokType.postfix && !canInsertSemicolon()) {
       var node = startNodeFrom(expr);
       node.operator = tokVal;
@@ -1830,11 +1830,22 @@
 
   // Parse call, dot, and `[]`-subscript expressions.
 
-  function parseExprSubscripts() {
-    return parseSubscripts(parseExprAtom());
+  function parseExprSubscripts(noIn) {
+    return parseSubscripts(parseExprAtom(), false, noIn);
   }
 
-  function parseSubscripts(base, noCalls) {
+  function isTypeDescriptor(expr) {
+    switch (expr.type) {
+      case "Identifier":
+      case "MemberExpression":
+        return true;
+
+      default:
+        return false;
+    }
+  }
+
+  function parseSubscripts(base, noCalls, noIn) {
     if (eat(_dot)) {
       var node = startNodeFrom(base);
       node.object = base;
@@ -1850,15 +1861,41 @@
       return parseSubscripts(finishNode(node, "MemberExpression"), noCalls);
     } else if (!noCalls && eat(_parenL)) {
       var node = startNodeFrom(base);
-      node.callee = base;
-      node.arguments = parseExprList(_parenR, false);
-      return parseSubscripts(finishNode(node, "CallExpression"), noCalls);
+      var args = parseExprList(_parenR, false);
+      if (isTypeDescriptor(base) && (tokType === _arrow || tokType === _braceL)) {
+        var isArrow = eat(_arrow);
+        parseArrowExpression(node, args);
+        if (!isArrow) {
+          if (node.expression) unexpected(node.body.start);
+          node.type = "FunctionExpression";
+        }
+        node.binaryType = base;
+      } else {
+        node.callee = base;
+        node.arguments = args;
+        finishNode(node, "CallExpression");
+      }
+      return parseSubscripts(node);
     } else if (tokType === _bquote) {
       var node = startNodeFrom(base);
       node.tag = base;
       node.quasi = parseTemplate();
       return parseSubscripts(finishNode(node, "TaggedTemplateExpression"), noCalls);
-    } return base;
+    } else if (isTypeDescriptor(base) && tokType === _name && !canInsertSemicolon() && !(noIn && tokVal === 'of')) {
+      var node = startNodeFrom(base);
+      var id = parseIdent(), isArrow = eat(_arrow);
+      if (isArrow) {
+        parseArrowExpression(node, [id]);
+      } else {
+        initFunction(node);
+        node.id = id;
+        parseFunctionParams(node);
+        parseFunctionBody(node);
+        finishNode(node, "FunctionExpression");
+      }
+      node.binaryType = base;
+      return node;
+    } else return base;
   }
 
   // Parse an atomic expression — either a single token that is an
@@ -1979,7 +2016,7 @@
   function parseNew() {
     var node = startNode();
     next();
-    node.callee = parseSubscripts(parseExprAtom(), true);
+    node.callee = parseSubscripts(parseExprAtom(), true, true);
     if (eat(_parenL)) node.arguments = parseExprList(_parenR, false);
     else node.arguments = empty;
     return finishNode(node, "NewExpression");
@@ -2090,6 +2127,7 @@
       node.rest = null;
       node.generator = false;
     }
+    node.binaryType = null;
   }
 
   // Parse a function declaration or literal (depending on the

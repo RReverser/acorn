@@ -47,7 +47,7 @@ test("this\n", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("null\n", {
   type: "Program",
@@ -90,7 +90,7 @@ test("null\n", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\n    42\n\n", {
   type: "Program",
@@ -133,7 +133,7 @@ test("\n    42\n\n", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(1 + 2 ) * 3", {
   type: "Program",
@@ -232,7 +232,7 @@ test("(1 + 2 ) * 3", {
       column: 12
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = []", {
   type: "Program",
@@ -303,7 +303,7 @@ test("x = []", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = [ ]", {
   type: "Program",
@@ -374,7 +374,7 @@ test("x = [ ]", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = [ 42 ]", {
   type: "Program",
@@ -460,7 +460,7 @@ test("x = [ 42 ]", {
       column: 10
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = [ 42, ]", {
   type: "Program",
@@ -546,7 +546,7 @@ test("x = [ 42, ]", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = [ ,, 42 ]", {
   type: "Program",
@@ -634,7 +634,7 @@ test("x = [ ,, 42 ]", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = [ 1, 2, 3, ]", {
   type: "Program",
@@ -748,7 +748,7 @@ test("x = [ 1, 2, 3, ]", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = [ 1, 2,, 3, ]", {
   type: "Program",
@@ -863,7 +863,7 @@ test("x = [ 1, 2,, 3, ]", {
       column: 17
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("日本語 = []", {
   type: "Program",
@@ -934,7 +934,7 @@ test("日本語 = []", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("T‿ = []", {
   type: "Program",
@@ -1005,7 +1005,7 @@ test("T‿ = []", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("T‌ = []", {
   type: "Program",
@@ -1076,7 +1076,7 @@ test("T‌ = []", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("T‍ = []", {
   type: "Program",
@@ -1147,7 +1147,7 @@ test("T‍ = []", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("ⅣⅡ = []", {
   type: "Program",
@@ -1218,7 +1218,7 @@ test("ⅣⅡ = []", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("ⅣⅡ = []", {
   type: "Program",
@@ -1289,7 +1289,7 @@ test("ⅣⅡ = []", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = {}", {
   type: "Program",
@@ -1360,7 +1360,7 @@ test("x = {}", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { }", {
   type: "Program",
@@ -1431,7 +1431,7 @@ test("x = { }", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { answer: 42 }", {
   type: "Program",
@@ -1535,7 +1535,7 @@ test("x = { answer: 42 }", {
       column: 18
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { if: 42 }", {
   type: "Program",
@@ -1639,7 +1639,7 @@ test("x = { if: 42 }", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { true: 42 }", {
   type: "Program",
@@ -1743,7 +1743,7 @@ test("x = { true: 42 }", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { false: 42 }", {
   type: "Program",
@@ -1847,7 +1847,7 @@ test("x = { false: 42 }", {
       column: 17
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { null: 42 }", {
   type: "Program",
@@ -1951,7 +1951,7 @@ test("x = { null: 42 }", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { \"answer\": 42 }", {
   type: "Program",
@@ -2055,7 +2055,7 @@ test("x = { \"answer\": 42 }", {
       column: 20
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { x: 1, x: 2 }", {
   type: "Program",
@@ -2191,7 +2191,7 @@ test("x = { x: 1, x: 2 }", {
       column: 18
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get width() { return m_width } }", {
   type: "Program",
@@ -2338,7 +2338,7 @@ test("x = { get width() { return m_width } }", {
       column: 38
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get undef() {} }", {
   type: "Program",
@@ -2457,7 +2457,7 @@ test("x = { get undef() {} }", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get if() {} }", {
   type: "Program",
@@ -2576,7 +2576,7 @@ test("x = { get if() {} }", {
       column: 19
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get true() {} }", {
   type: "Program",
@@ -2695,7 +2695,7 @@ test("x = { get true() {} }", {
       column: 21
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get false() {} }", {
   type: "Program",
@@ -2814,7 +2814,7 @@ test("x = { get false() {} }", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get null() {} }", {
   type: "Program",
@@ -2933,7 +2933,7 @@ test("x = { get null() {} }", {
       column: 21
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get \"undef\"() {} }", {
   type: "Program",
@@ -3052,7 +3052,7 @@ test("x = { get \"undef\"() {} }", {
       column: 24
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get 10() {} }", {
   type: "Program",
@@ -3171,7 +3171,7 @@ test("x = { get 10() {} }", {
       column: 19
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set width(w) { m_width = w } }", {
   type: "Program",
@@ -3361,7 +3361,7 @@ test("x = { set width(w) { m_width = w } }", {
       column: 36
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set if(w) { m_if = w } }", {
   type: "Program",
@@ -3551,7 +3551,7 @@ test("x = { set if(w) { m_if = w } }", {
       column: 30
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set true(w) { m_true = w } }", {
   type: "Program",
@@ -3741,7 +3741,7 @@ test("x = { set true(w) { m_true = w } }", {
       column: 34
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set false(w) { m_false = w } }", {
   type: "Program",
@@ -3931,7 +3931,7 @@ test("x = { set false(w) { m_false = w } }", {
       column: 36
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set null(w) { m_null = w } }", {
   type: "Program",
@@ -4121,7 +4121,7 @@ test("x = { set null(w) { m_null = w } }", {
       column: 34
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set \"null\"(w) { m_null = w } }", {
   type: "Program",
@@ -4311,7 +4311,7 @@ test("x = { set \"null\"(w) { m_null = w } }", {
       column: 36
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set 10(w) { m_null = w } }", {
   type: "Program",
@@ -4501,7 +4501,7 @@ test("x = { set 10(w) { m_null = w } }", {
       column: 32
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { get: 42 }", {
   type: "Program",
@@ -4605,7 +4605,7 @@ test("x = { get: 42 }", {
       column: 15
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = { set: 43 }", {
   type: "Program",
@@ -4709,7 +4709,7 @@ test("x = { set: 43 }", {
       column: 15
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("/* block comment */ 42", {
   type: "Program",
@@ -4752,7 +4752,7 @@ test("/* block comment */ 42", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("42 /*The*/ /*Answer*/", {
   type: "Program",
@@ -4795,7 +4795,7 @@ test("42 /*The*/ /*Answer*/", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("42 /*the*/ /*answer*/", {
   type: "Program",
@@ -4838,7 +4838,7 @@ test("42 /*the*/ /*answer*/", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("/* multiline\ncomment\nshould\nbe\nignored */ 42", {
   type: "Program",
@@ -4881,7 +4881,7 @@ test("/* multiline\ncomment\nshould\nbe\nignored */ 42", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("/*a\r\nb*/ 42", {
   type: "Program",
@@ -4924,7 +4924,7 @@ test("/*a\r\nb*/ 42", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("/*a\rb*/ 42", {
   type: "Program",
@@ -4967,7 +4967,7 @@ test("/*a\rb*/ 42", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("/*a\nb*/ 42", {
   type: "Program",
@@ -5010,7 +5010,7 @@ test("/*a\nb*/ 42", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("/*a\nc*/ 42", {
   type: "Program",
@@ -5053,7 +5053,7 @@ test("/*a\nc*/ 42", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("// line comment\n42", {
   type: "Program",
@@ -5096,7 +5096,7 @@ test("// line comment\n42", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("42 // line comment", {
   type: "Program",
@@ -5139,7 +5139,7 @@ test("42 // line comment", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("// Hello, world!\n42", {
   type: "Program",
@@ -5182,7 +5182,7 @@ test("// Hello, world!\n42", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("// Hello, world!\n", {
   type: "Program",
@@ -5197,7 +5197,7 @@ test("// Hello, world!\n", {
       column: 0
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("// Hallo, world!\n", {
   type: "Program",
@@ -5212,7 +5212,7 @@ test("// Hallo, world!\n", {
       column: 0
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("//\n42", {
   type: "Program",
@@ -5255,7 +5255,7 @@ test("//\n42", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("//", {
   type: "Program",
@@ -5270,7 +5270,7 @@ test("//", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("// ", {
   type: "Program",
@@ -5285,7 +5285,7 @@ test("// ", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("/**/42", {
   type: "Program",
@@ -5328,7 +5328,7 @@ test("/**/42", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("// Hello, world!\n\n//   Another hello\n42", {
   type: "Program",
@@ -5371,7 +5371,7 @@ test("// Hello, world!\n\n//   Another hello\n42", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("if (x) { // Some comment\ndoThat(); }", {
   type: "Program",
@@ -5471,7 +5471,7 @@ test("if (x) { // Some comment\ndoThat(); }", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("switch (answer) { case 42: /* perfect */ bingo() }", {
   type: "Program",
@@ -5586,7 +5586,7 @@ test("switch (answer) { case 42: /* perfect */ bingo() }", {
       column: 50
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0", {
   type: "Program",
@@ -5629,7 +5629,7 @@ test("0", {
       column: 1
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("3", {
   type: "Program",
@@ -5672,7 +5672,7 @@ test("3", {
       column: 1
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("5", {
   type: "Program",
@@ -5715,7 +5715,7 @@ test("5", {
       column: 1
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("42", {
   type: "Program",
@@ -5758,7 +5758,7 @@ test("42", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test(".14", {
   type: "Program",
@@ -5801,7 +5801,7 @@ test(".14", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("3.14159", {
   type: "Program",
@@ -5844,7 +5844,7 @@ test("3.14159", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("6.02214179e+23", {
   type: "Program",
@@ -5887,7 +5887,7 @@ test("6.02214179e+23", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("1.492417830e-10", {
   type: "Program",
@@ -5930,7 +5930,7 @@ test("1.492417830e-10", {
       column: 15
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0x0", {
   type: "Program",
@@ -5973,7 +5973,7 @@ test("0x0", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0e+100", {
   type: "Program",
@@ -6016,7 +6016,7 @@ test("0e+100", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0xabc", {
   type: "Program",
@@ -6059,7 +6059,7 @@ test("0xabc", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0xdef", {
   type: "Program",
@@ -6102,7 +6102,7 @@ test("0xdef", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0X1A", {
   type: "Program",
@@ -6145,7 +6145,7 @@ test("0X1A", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0x10", {
   type: "Program",
@@ -6188,7 +6188,7 @@ test("0x10", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0x100", {
   type: "Program",
@@ -6231,7 +6231,7 @@ test("0x100", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0X04", {
   type: "Program",
@@ -6274,7 +6274,7 @@ test("0X04", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("02", {
   type: "Program",
@@ -6317,7 +6317,7 @@ test("02", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("012", {
   type: "Program",
@@ -6360,7 +6360,7 @@ test("012", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("0012", {
   type: "Program",
@@ -6403,7 +6403,7 @@ test("0012", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\"", {
   type: "Program",
@@ -6446,7 +6446,7 @@ test("\"Hello\"", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"\\n\\r\\t\\v\\b\\f\\\\\\'\\\"\\0\"", {
   type: "Program",
@@ -6489,7 +6489,7 @@ test("\"\\n\\r\\t\\v\\b\\f\\\\\\'\\\"\\0\"", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"\\u0061\"", {
   type: "Program",
@@ -6532,7 +6532,7 @@ test("\"\\u0061\"", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"\\x61\"", {
   type: "Program",
@@ -6575,7 +6575,7 @@ test("\"\\x61\"", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\nworld\"", {
   type: "Program",
@@ -6618,7 +6618,7 @@ test("\"Hello\\nworld\"", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\\nworld\"", {
   type: "Program",
@@ -6661,7 +6661,7 @@ test("\"Hello\\\nworld\"", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\02World\"", {
   type: "Program",
@@ -6704,7 +6704,7 @@ test("\"Hello\\02World\"", {
       column: 15
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\012World\"", {
   type: "Program",
@@ -6747,7 +6747,7 @@ test("\"Hello\\012World\"", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\122World\"", {
   type: "Program",
@@ -6790,7 +6790,7 @@ test("\"Hello\\122World\"", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\0122World\"", {
   type: "Program",
@@ -6833,7 +6833,7 @@ test("\"Hello\\0122World\"", {
       column: 17
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\312World\"", {
   type: "Program",
@@ -6876,7 +6876,7 @@ test("\"Hello\\312World\"", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\412World\"", {
   type: "Program",
@@ -6919,7 +6919,7 @@ test("\"Hello\\412World\"", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\812World\"", {
   type: "Program",
@@ -6962,7 +6962,7 @@ test("\"Hello\\812World\"", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\712World\"", {
   type: "Program",
@@ -7005,7 +7005,7 @@ test("\"Hello\\712World\"", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\0World\"", {
   type: "Program",
@@ -7048,7 +7048,7 @@ test("\"Hello\\0World\"", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\\r\nworld\"", {
   type: "Program",
@@ -7091,7 +7091,7 @@ test("\"Hello\\\r\nworld\"", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\"Hello\\1World\"", {
   type: "Program",
@@ -7134,7 +7134,7 @@ test("\"Hello\\1World\"", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = /[a-z]/i", {
   type: "Program",
@@ -7207,7 +7207,7 @@ test("var x = /[a-z]/i", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = /[x-z]/i", {
   type: "Program",
@@ -7280,7 +7280,7 @@ test("var x = /[x-z]/i", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = /[a-c]/i", {
   type: "Program",
@@ -7353,7 +7353,7 @@ test("var x = /[a-c]/i", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = /[P QR]/i", {
   type: "Program",
@@ -7426,7 +7426,7 @@ test("var x = /[P QR]/i", {
       column: 17
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = /foo\\/bar/", {
   type: "Program",
@@ -7499,7 +7499,7 @@ test("var x = /foo\\/bar/", {
       column: 18
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = /=([^=\\s])+/g", {
   type: "Program",
@@ -7572,7 +7572,7 @@ test("var x = /=([^=\\s])+/g", {
       column: 21
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = /[P QR]/\\u0067", {
   type: "Program",
@@ -7645,7 +7645,7 @@ test("var x = /[P QR]/\\u0067", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("new Button", {
   type: "Program",
@@ -7702,7 +7702,7 @@ test("new Button", {
       column: 10
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("new Button()", {
   type: "Program",
@@ -7759,7 +7759,7 @@ test("new Button()", {
       column: 12
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("new new foo", {
   type: "Program",
@@ -7830,7 +7830,7 @@ test("new new foo", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("new new foo()", {
   type: "Program",
@@ -7901,7 +7901,7 @@ test("new new foo()", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("new foo().bar()", {
   type: "Program",
@@ -8000,7 +8000,7 @@ test("new foo().bar()", {
       column: 15
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("new foo[bar]", {
   type: "Program",
@@ -8085,7 +8085,7 @@ test("new foo[bar]", {
       column: 12
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("new foo.bar()", {
   type: "Program",
@@ -8170,7 +8170,7 @@ test("new foo.bar()", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("( new foo).bar()", {
   type: "Program",
@@ -8269,7 +8269,7 @@ test("( new foo).bar()", {
       column: 16
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("foo(bar, baz)", {
   type: "Program",
@@ -8355,7 +8355,7 @@ test("foo(bar, baz)", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(    foo  )()", {
   type: "Program",
@@ -8412,7 +8412,7 @@ test("(    foo  )()", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe.milkyway", {
   type: "Program",
@@ -8483,7 +8483,7 @@ test("universe.milkyway", {
       column: 17
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe.milkyway.solarsystem", {
   type: "Program",
@@ -8582,7 +8582,7 @@ test("universe.milkyway.solarsystem", {
       column: 29
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe.milkyway.solarsystem.Earth", {
   type: "Program",
@@ -8709,7 +8709,7 @@ test("universe.milkyway.solarsystem.Earth", {
       column: 35
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe[galaxyName, otherUselessName]", {
   type: "Program",
@@ -8809,7 +8809,7 @@ test("universe[galaxyName, otherUselessName]", {
       column: 38
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe[galaxyName]", {
   type: "Program",
@@ -8880,7 +8880,7 @@ test("universe[galaxyName]", {
       column: 20
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe[42].galaxies", {
   type: "Program",
@@ -8979,7 +8979,7 @@ test("universe[42].galaxies", {
       column: 21
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe(42).galaxies", {
   type: "Program",
@@ -9079,7 +9079,7 @@ test("universe(42).galaxies", {
       column: 21
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe(42).galaxies(14, 3, 77).milkyway", {
   type: "Program",
@@ -9264,7 +9264,7 @@ test("universe(42).galaxies(14, 3, 77).milkyway", {
       column: 41
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("earth.asia.Indonesia.prepareForElection(2014)", {
   type: "Program",
@@ -9420,7 +9420,7 @@ test("earth.asia.Indonesia.prepareForElection(2014)", {
       column: 45
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe.if", {
   type: "Program",
@@ -9491,7 +9491,7 @@ test("universe.if", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe.true", {
   type: "Program",
@@ -9562,7 +9562,7 @@ test("universe.true", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe.false", {
   type: "Program",
@@ -9633,7 +9633,7 @@ test("universe.false", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("universe.null", {
   type: "Program",
@@ -9704,7 +9704,7 @@ test("universe.null", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x++", {
   type: "Program",
@@ -9762,7 +9762,7 @@ test("x++", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x--", {
   type: "Program",
@@ -9820,7 +9820,7 @@ test("x--", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("eval++", {
   type: "Program",
@@ -9878,7 +9878,7 @@ test("eval++", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("eval--", {
   type: "Program",
@@ -9936,7 +9936,7 @@ test("eval--", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("arguments++", {
   type: "Program",
@@ -9994,7 +9994,7 @@ test("arguments++", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("arguments--", {
   type: "Program",
@@ -10052,7 +10052,7 @@ test("arguments--", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("++x", {
   type: "Program",
@@ -10110,7 +10110,7 @@ test("++x", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("--x", {
   type: "Program",
@@ -10168,7 +10168,7 @@ test("--x", {
       column: 3
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("++eval", {
   type: "Program",
@@ -10226,7 +10226,7 @@ test("++eval", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("--eval", {
   type: "Program",
@@ -10284,7 +10284,7 @@ test("--eval", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("++arguments", {
   type: "Program",
@@ -10342,7 +10342,7 @@ test("++arguments", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("--arguments", {
   type: "Program",
@@ -10400,7 +10400,7 @@ test("--arguments", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("+x", {
   type: "Program",
@@ -10458,7 +10458,7 @@ test("+x", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("-x", {
   type: "Program",
@@ -10516,7 +10516,7 @@ test("-x", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("~x", {
   type: "Program",
@@ -10574,7 +10574,7 @@ test("~x", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("!x", {
   type: "Program",
@@ -10632,7 +10632,7 @@ test("!x", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("void x", {
   type: "Program",
@@ -10690,7 +10690,7 @@ test("void x", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("delete x", {
   type: "Program",
@@ -10748,7 +10748,7 @@ test("delete x", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("typeof x", {
   type: "Program",
@@ -10806,7 +10806,7 @@ test("typeof x", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x * y", {
   type: "Program",
@@ -10877,7 +10877,7 @@ test("x * y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x / y", {
   type: "Program",
@@ -10948,7 +10948,7 @@ test("x / y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x % y", {
   type: "Program",
@@ -11019,7 +11019,7 @@ test("x % y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x + y", {
   type: "Program",
@@ -11090,7 +11090,7 @@ test("x + y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x - y", {
   type: "Program",
@@ -11161,7 +11161,7 @@ test("x - y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x << y", {
   type: "Program",
@@ -11232,7 +11232,7 @@ test("x << y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x >> y", {
   type: "Program",
@@ -11303,7 +11303,7 @@ test("x >> y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x >>> y", {
   type: "Program",
@@ -11374,7 +11374,7 @@ test("x >>> y", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x < y", {
   type: "Program",
@@ -11445,7 +11445,7 @@ test("x < y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x > y", {
   type: "Program",
@@ -11516,7 +11516,7 @@ test("x > y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x <= y", {
   type: "Program",
@@ -11587,7 +11587,7 @@ test("x <= y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x >= y", {
   type: "Program",
@@ -11658,7 +11658,7 @@ test("x >= y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x in y", {
   type: "Program",
@@ -11729,7 +11729,7 @@ test("x in y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x instanceof y", {
   type: "Program",
@@ -11800,7 +11800,7 @@ test("x instanceof y", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x < y < z", {
   type: "Program",
@@ -11899,7 +11899,7 @@ test("x < y < z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x == y", {
   type: "Program",
@@ -11970,7 +11970,7 @@ test("x == y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x != y", {
   type: "Program",
@@ -12041,7 +12041,7 @@ test("x != y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x === y", {
   type: "Program",
@@ -12112,7 +12112,7 @@ test("x === y", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x !== y", {
   type: "Program",
@@ -12183,7 +12183,7 @@ test("x !== y", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x & y", {
   type: "Program",
@@ -12254,7 +12254,7 @@ test("x & y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x ^ y", {
   type: "Program",
@@ -12325,7 +12325,7 @@ test("x ^ y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x | y", {
   type: "Program",
@@ -12396,7 +12396,7 @@ test("x | y", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x + y + z", {
   type: "Program",
@@ -12495,7 +12495,7 @@ test("x + y + z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x - y + z", {
   type: "Program",
@@ -12594,7 +12594,7 @@ test("x - y + z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x + y - z", {
   type: "Program",
@@ -12693,7 +12693,7 @@ test("x + y - z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x - y - z", {
   type: "Program",
@@ -12792,7 +12792,7 @@ test("x - y - z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x + y * z", {
   type: "Program",
@@ -12891,7 +12891,7 @@ test("x + y * z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x + y / z", {
   type: "Program",
@@ -12990,7 +12990,7 @@ test("x + y / z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x - y % z", {
   type: "Program",
@@ -13089,7 +13089,7 @@ test("x - y % z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x * y * z", {
   type: "Program",
@@ -13188,7 +13188,7 @@ test("x * y * z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x * y / z", {
   type: "Program",
@@ -13287,7 +13287,7 @@ test("x * y / z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x * y % z", {
   type: "Program",
@@ -13386,7 +13386,7 @@ test("x * y % z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x % y * z", {
   type: "Program",
@@ -13485,7 +13485,7 @@ test("x % y * z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x << y << z", {
   type: "Program",
@@ -13584,7 +13584,7 @@ test("x << y << z", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x | y | z", {
   type: "Program",
@@ -13683,7 +13683,7 @@ test("x | y | z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x & y & z", {
   type: "Program",
@@ -13782,7 +13782,7 @@ test("x & y & z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x ^ y ^ z", {
   type: "Program",
@@ -13881,7 +13881,7 @@ test("x ^ y ^ z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x & y | z", {
   type: "Program",
@@ -13980,7 +13980,7 @@ test("x & y | z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x | y ^ z", {
   type: "Program",
@@ -14079,7 +14079,7 @@ test("x | y ^ z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x | y & z", {
   type: "Program",
@@ -14178,7 +14178,7 @@ test("x | y & z", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x || y", {
   type: "Program",
@@ -14249,7 +14249,7 @@ test("x || y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x && y", {
   type: "Program",
@@ -14320,7 +14320,7 @@ test("x && y", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x || y || z", {
   type: "Program",
@@ -14419,7 +14419,7 @@ test("x || y || z", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x && y && z", {
   type: "Program",
@@ -14518,7 +14518,7 @@ test("x && y && z", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x || y && z", {
   type: "Program",
@@ -14617,7 +14617,7 @@ test("x || y && z", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x || y ^ z", {
   type: "Program",
@@ -14716,7 +14716,7 @@ test("x || y ^ z", {
       column: 10
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("y ? 1 : 2", {
   type: "Program",
@@ -14800,7 +14800,7 @@ test("y ? 1 : 2", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x && y ? 1 : 2", {
   type: "Program",
@@ -14912,7 +14912,7 @@ test("x && y ? 1 : 2", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = 42", {
   type: "Program",
@@ -14983,7 +14983,7 @@ test("x = 42", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("eval = 42", {
   type: "Program",
@@ -15054,7 +15054,7 @@ test("eval = 42", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("arguments = 42", {
   type: "Program",
@@ -15125,7 +15125,7 @@ test("arguments = 42", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x *= 42", {
   type: "Program",
@@ -15196,7 +15196,7 @@ test("x *= 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x /= 42", {
   type: "Program",
@@ -15267,7 +15267,7 @@ test("x /= 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x %= 42", {
   type: "Program",
@@ -15338,7 +15338,7 @@ test("x %= 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x += 42", {
   type: "Program",
@@ -15409,7 +15409,7 @@ test("x += 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x -= 42", {
   type: "Program",
@@ -15480,7 +15480,7 @@ test("x -= 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x <<= 42", {
   type: "Program",
@@ -15551,7 +15551,7 @@ test("x <<= 42", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x >>= 42", {
   type: "Program",
@@ -15622,7 +15622,7 @@ test("x >>= 42", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x >>>= 42", {
   type: "Program",
@@ -15693,7 +15693,7 @@ test("x >>>= 42", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x &= 42", {
   type: "Program",
@@ -15764,7 +15764,7 @@ test("x &= 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x ^= 42", {
   type: "Program",
@@ -15835,7 +15835,7 @@ test("x ^= 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x |= 42", {
   type: "Program",
@@ -15906,7 +15906,7 @@ test("x |= 42", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ foo }", {
   type: "Program",
@@ -15964,7 +15964,7 @@ test("{ foo }", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ doThis(); doThat(); }", {
   type: "Program",
@@ -16077,7 +16077,7 @@ test("{ doThis(); doThat(); }", {
       column: 23
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{}", {
   type: "Program",
@@ -16107,7 +16107,7 @@ test("{}", {
       column: 2
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x", {
   type: "Program",
@@ -16167,7 +16167,7 @@ test("var x", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x, y;", {
   type: "Program",
@@ -16255,7 +16255,7 @@ test("var x, y;", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = 42", {
   type: "Program",
@@ -16328,7 +16328,7 @@ test("var x = 42", {
       column: 10
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var eval = 42, arguments = 42", {
   type: "Program",
@@ -16442,7 +16442,7 @@ test("var eval = 42, arguments = 42", {
       column: 29
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x = 14, y = 3, z = 1977", {
   type: "Program",
@@ -16597,7 +16597,7 @@ test("var x = 14, y = 3, z = 1977", {
       column: 27
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var implements, interface, package", {
   type: "Program",
@@ -16713,7 +16713,7 @@ test("var implements, interface, package", {
       column: 34
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var private, protected, public, static", {
   type: "Program",
@@ -16857,7 +16857,7 @@ test("var private, protected, public, static", {
       column: 38
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test(";", {
   type: "Program",
@@ -16886,7 +16886,7 @@ test(";", {
       column: 1
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x", {
   type: "Program",
@@ -16929,7 +16929,7 @@ test("x", {
       column: 1
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x, y", {
   type: "Program",
@@ -17001,7 +17001,7 @@ test("x, y", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("\\u0061", {
   type: "Program",
@@ -17044,7 +17044,7 @@ test("\\u0061", {
       column: 6
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("a\\u0061", {
   type: "Program",
@@ -17087,7 +17087,7 @@ test("a\\u0061", {
       column: 7
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("if (morning) goodMorning()", {
   type: "Program",
@@ -17172,7 +17172,7 @@ test("if (morning) goodMorning()", {
       column: 26
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("if (morning) (function(){})", {
   type: "Program",
@@ -17258,7 +17258,7 @@ test("if (morning) (function(){})", {
       column: 27
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("if (morning) var x = 0;", {
   type: "Program",
@@ -17359,7 +17359,7 @@ test("if (morning) var x = 0;", {
       column: 23
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("if (morning) function a(){}", {
   type: "Program",
@@ -17445,7 +17445,7 @@ test("if (morning) function a(){}", {
       column: 27
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("if (morning) goodMorning(); else goodDay()", {
   type: "Program",
@@ -17570,7 +17570,7 @@ test("if (morning) goodMorning(); else goodDay()", {
       column: 42
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("do keep(); while (true)", {
   type: "Program",
@@ -17654,7 +17654,7 @@ test("do keep(); while (true)", {
       column: 23
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("do keep(); while (true);", {
   type: "Program",
@@ -17738,7 +17738,7 @@ test("do keep(); while (true);", {
       column: 24
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("do { x++; y--; } while (x < 10)", {
   type: "Program",
@@ -17908,7 +17908,7 @@ test("do { x++; y--; } while (x < 10)", {
       column: 31
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ do { } while (false);false }", {
   type: "Program",
@@ -18007,7 +18007,7 @@ test("{ do { } while (false);false }", {
       column: 30
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) doSomething()", {
   type: "Program",
@@ -18091,7 +18091,7 @@ test("while (true) doSomething()", {
       column: 26
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (x < 10) { x++; y--; }", {
   type: "Program",
@@ -18261,7 +18261,7 @@ test("while (x < 10) { x++; y--; }", {
       column: 28
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(;;);", {
   type: "Program",
@@ -18306,7 +18306,7 @@ test("for(;;);", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(;;){}", {
   type: "Program",
@@ -18352,7 +18352,7 @@ test("for(;;){}", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(x = 0;;);", {
   type: "Program",
@@ -18438,7 +18438,7 @@ test("for(x = 0;;);", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(var x = 0;;);", {
   type: "Program",
@@ -18539,7 +18539,7 @@ test("for(var x = 0;;);", {
       column: 17
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(var x = 0, y = 1;;);", {
   type: "Program",
@@ -18681,7 +18681,7 @@ test("for(var x = 0, y = 1;;);", {
       column: 24
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(x = 0; x < 42;);", {
   type: "Program",
@@ -18808,7 +18808,7 @@ test("for(x = 0; x < 42;);", {
       column: 20
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(x = 0; x < 42; x++);", {
   type: "Program",
@@ -18963,7 +18963,7 @@ test("for(x = 0; x < 42; x++);", {
       column: 24
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(x = 0; x < 42; x++) process(x);", {
   type: "Program",
@@ -19161,7 +19161,7 @@ test("for(x = 0; x < 42; x++) process(x);", {
       column: 35
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for(x in list) process(x);", {
   type: "Program",
@@ -19274,7 +19274,7 @@ test("for(x in list) process(x);", {
       column: 26
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for (var x in list) process(x);", {
   type: "Program",
@@ -19417,7 +19417,7 @@ test("for (var x in list) process(x);", {
       column: 31
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for (var x = 42 in list) process(x);", {
   type: "Program",
@@ -19573,7 +19573,7 @@ test("for (var x = 42 in list) process(x);", {
       column: 36
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("for (var i = function() { return 10 in [] } in list) process(x);", {
   type: "Program",
@@ -19800,7 +19800,7 @@ test("for (var i = function() { return 10 in [] } in list) process(x);", {
       column: 64
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { continue; }", {
   type: "Program",
@@ -19872,7 +19872,7 @@ test("while (true) { continue; }", {
       column: 26
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { continue }", {
   type: "Program",
@@ -19944,7 +19944,7 @@ test("while (true) { continue }", {
       column: 25
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("done: while (true) { continue done }", {
   type: "Program",
@@ -20056,7 +20056,7 @@ test("done: while (true) { continue done }", {
       column: 36
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("done: while (true) { continue done; }", {
   type: "Program",
@@ -20168,7 +20168,7 @@ test("done: while (true) { continue done; }", {
       column: 37
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { break }", {
   type: "Program",
@@ -20240,7 +20240,7 @@ test("while (true) { break }", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("done: while (true) { break done }", {
   type: "Program",
@@ -20352,7 +20352,7 @@ test("done: while (true) { break done }", {
       column: 33
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("done: while (true) { break done; }", {
   type: "Program",
@@ -20464,7 +20464,7 @@ test("done: while (true) { break done; }", {
       column: 34
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){ return })", {
   type: "Program",
@@ -20537,7 +20537,7 @@ test("(function(){ return })", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){ return; })", {
   type: "Program",
@@ -20610,7 +20610,7 @@ test("(function(){ return; })", {
       column: 23
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){ return x; })", {
   type: "Program",
@@ -20696,7 +20696,7 @@ test("(function(){ return x; })", {
       column: 25
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){ return x * y })", {
   type: "Program",
@@ -20810,7 +20810,7 @@ test("(function(){ return x * y })", {
       column: 28
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("with (x) foo = bar", {
   type: "Program",
@@ -20908,7 +20908,7 @@ test("with (x) foo = bar", {
       column: 18
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("with (x) foo = bar;", {
   type: "Program",
@@ -21006,7 +21006,7 @@ test("with (x) foo = bar;", {
       column: 19
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("with (x) { foo = bar }", {
   type: "Program",
@@ -21119,7 +21119,7 @@ test("with (x) { foo = bar }", {
       column: 22
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("switch (x) {}", {
   type: "Program",
@@ -21163,7 +21163,7 @@ test("switch (x) {}", {
       column: 13
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("switch (answer) { case 42: hi(); break; }", {
   type: "Program",
@@ -21292,7 +21292,7 @@ test("switch (answer) { case 42: hi(); break; }", {
       column: 41
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("switch (answer) { case 42: hi(); break; default: break }", {
   type: "Program",
@@ -21451,7 +21451,7 @@ test("switch (answer) { case 42: hi(); break; default: break }", {
       column: 56
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("start: for (;;) break start", {
   type: "Program",
@@ -21537,7 +21537,7 @@ test("start: for (;;) break start", {
       column: 27
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("start: while (true) break start", {
   type: "Program",
@@ -21634,7 +21634,7 @@ test("start: while (true) break start", {
       column: 31
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("throw x;", {
   type: "Program",
@@ -21677,7 +21677,7 @@ test("throw x;", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("throw x * y", {
   type: "Program",
@@ -21748,7 +21748,7 @@ test("throw x * y", {
       column: 11
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("throw { message: \"Error\" }", {
   type: "Program",
@@ -21824,7 +21824,7 @@ test("throw { message: \"Error\" }", {
       column: 26
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("try { } catch (e) { }", {
   type: "Program",
@@ -21911,7 +21911,7 @@ test("try { } catch (e) { }", {
       column: 21
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("try { } catch (eval) { }", {
   type: "Program",
@@ -21999,7 +21999,7 @@ test("try { } catch (eval) { }", {
       column: 24
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("try { } catch (arguments) { }", {
   type: "Program",
@@ -22087,7 +22087,7 @@ test("try { } catch (arguments) { }", {
       column: 29
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("try { } catch (e) { say(e) }", {
   type: "Program",
@@ -22232,7 +22232,7 @@ test("try { } catch (e) { say(e) }", {
       column: 28
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("try { } finally { cleanup(stuff) }", {
   type: "Program",
@@ -22347,7 +22347,7 @@ test("try { } finally { cleanup(stuff) }", {
       column: 34
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("try { doThat(); } catch (e) { say(e) }", {
   type: "Program",
@@ -22534,7 +22534,7 @@ test("try { doThat(); } catch (e) { say(e) }", {
       column: 38
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("try { doThat(); } catch (e) { say(e) } finally { cleanup(stuff) }", {
   type: "Program",
@@ -22791,7 +22791,7 @@ test("try { doThat(); } catch (e) { say(e) } finally { cleanup(stuff) }", {
       column: 65
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("debugger;", {
   type: "Program",
@@ -22820,7 +22820,7 @@ test("debugger;", {
       column: 9
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function hello() { sayHi(); }", {
   type: "Program",
@@ -22920,7 +22920,7 @@ test("function hello() { sayHi(); }", {
       column: 29
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function eval() { }", {
   type: "Program",
@@ -22978,7 +22978,7 @@ test("function eval() { }", {
       column: 19
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function arguments() { }", {
   type: "Program",
@@ -23036,7 +23036,7 @@ test("function arguments() { }", {
       column: 24
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function test(t, t) { }", {
   type: "Program",
@@ -23123,7 +23123,7 @@ test("function test(t, t) { }", {
       column: 23
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function test(t, t) { })", {
   type: "Program",
@@ -23223,7 +23223,7 @@ test("(function test(t, t) { })", {
       column: 25
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function eval() { function inner() { \"use strict\" } }", {
   type: "Program",
@@ -23352,7 +23352,7 @@ test("function eval() { function inner() { \"use strict\" } }", {
       column: 53
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function hello(a) { sayHi(); }", {
   type: "Program",
@@ -23467,7 +23467,7 @@ test("function hello(a) { sayHi(); }", {
       column: 30
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function hello(a, b) { sayHi(); }", {
   type: "Program",
@@ -23596,7 +23596,7 @@ test("function hello(a, b) { sayHi(); }", {
       column: 33
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("function hello(...rest) { }", {
   type: "Program",
@@ -23891,7 +23891,7 @@ test("var hi = function() { sayHi() };", {
       column: 32
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var hi = function (...r) { sayHi() };", {
   type: "Program",
@@ -24139,7 +24139,7 @@ test("var hi = function eval() { };", {
       column: 29
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var hi = function arguments() { };", {
   type: "Program",
@@ -24240,7 +24240,7 @@ test("var hi = function arguments() { };", {
       column: 34
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var hello = function hi() { sayHi() };", {
   type: "Program",
@@ -24383,7 +24383,7 @@ test("var hello = function hi() { sayHi() };", {
       column: 38
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){})", {
   type: "Program",
@@ -24441,7 +24441,7 @@ test("(function(){})", {
       column: 14
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ x\n++y }", {
   type: "Program",
@@ -24541,7 +24541,7 @@ test("{ x\n++y }", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ x\n--y }", {
   type: "Program",
@@ -24641,7 +24641,7 @@ test("{ x\n--y }", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("var x /* comment */;", {
   type: "Program",
@@ -24701,7 +24701,7 @@ test("var x /* comment */;", {
       column: 20
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ var x = 14, y = 3\nz; }", {
   type: "Program",
@@ -24857,7 +24857,7 @@ test("{ var x = 14, y = 3\nz; }", {
       column: 4
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { continue\nthere; }", {
   type: "Program",
@@ -24956,7 +24956,7 @@ test("while (true) { continue\nthere; }", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { continue // Comment\nthere; }", {
   type: "Program",
@@ -25055,7 +25055,7 @@ test("while (true) { continue // Comment\nthere; }", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { continue /* Multiline\nComment */there; }", {
   type: "Program",
@@ -25154,7 +25154,7 @@ test("while (true) { continue /* Multiline\nComment */there; }", {
       column: 18
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { break\nthere; }", {
   type: "Program",
@@ -25253,7 +25253,7 @@ test("while (true) { break\nthere; }", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { break // Comment\nthere; }", {
   type: "Program",
@@ -25352,7 +25352,7 @@ test("while (true) { break // Comment\nthere; }", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("while (true) { break /* Multiline\nComment */there; }", {
   type: "Program",
@@ -25451,7 +25451,7 @@ test("while (true) { break /* Multiline\nComment */there; }", {
       column: 18
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){ return\nx; })", {
   type: "Program",
@@ -25551,7 +25551,7 @@ test("(function(){ return\nx; })", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){ return // Comment\nx; })", {
   type: "Program",
@@ -25651,7 +25651,7 @@ test("(function(){ return // Comment\nx; })", {
       column: 5
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function(){ return/* Multiline\nComment */x; })", {
   type: "Program",
@@ -25751,7 +25751,7 @@ test("(function(){ return/* Multiline\nComment */x; })", {
       column: 15
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ throw error\nerror; }", {
   type: "Program",
@@ -25836,7 +25836,7 @@ test("{ throw error\nerror; }", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ throw error// Comment\nerror; }", {
   type: "Program",
@@ -25921,7 +25921,7 @@ test("{ throw error// Comment\nerror; }", {
       column: 8
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{ throw error/* Multiline\nComment */error; }", {
   type: "Program",
@@ -26006,7 +26006,7 @@ test("{ throw error/* Multiline\nComment */error; }", {
       column: 18
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("", {
   type: "Program",
@@ -26021,7 +26021,7 @@ test("", {
       column: 0
     }
   }
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("foo: if (true) break foo;", {
   type: "Program",
@@ -26133,7 +26133,7 @@ test("foo: if (true) break foo;", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("(function () {\n 'use strict';\n '\0';\n}())", {
   type: "Program",
@@ -26278,7 +26278,7 @@ test("(function () {\n 'use strict';\n '\0';\n}())", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("123..toString(10)", {
   type: "Program",
@@ -26322,7 +26322,7 @@ test("123..toString(10)", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("123.+2", {
   type: "Program",
@@ -26353,7 +26353,7 @@ test("123.+2", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("a\u2028b", {
   type: "Program",
@@ -26383,7 +26383,7 @@ test("a\u2028b", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("'a\\u0026b'", {
   type: "Program",
@@ -26396,7 +26396,7 @@ test("'a\\u0026b'", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("foo: 10; foo: 20;", {
   type: "Program",
@@ -26432,7 +26432,7 @@ test("foo: 10; foo: 20;", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("if(1)/  foo/", {
   type: "Program",
@@ -26464,7 +26464,7 @@ test("if(1)/  foo/", {
       alternate: null
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("price_9̶9̶_89", {
   type: "Program",
@@ -26479,7 +26479,7 @@ test("price_9̶9̶_89", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 // option tests
 
@@ -26602,7 +26602,7 @@ test("a.in / b", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("{}/=/", {
   type: "Program",
@@ -26619,7 +26619,7 @@ test("{}/=/", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("foo <!--bar\n+baz", {
   type: "Program",
@@ -26650,7 +26650,7 @@ test("foo <!--bar\n+baz", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("x = y-->10;\n --> nothing", {
   type: "Program",
@@ -26684,7 +26684,7 @@ test("x = y-->10;\n --> nothing", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 test("'use strict';\nobject.static();", {
   type: "Program",
@@ -26717,180 +26717,117 @@ test("'use strict';\nobject.static();", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 // Failure tests
 
-testFail("{",
-         "Unexpected token (1:1)");
+testFail("{", "Unexpected token (1:1)", { ecmaVersion: 5 });
 
-testFail("}",
-         "Unexpected token (1:0)");
+testFail("}", "Unexpected token (1:0)", { ecmaVersion: 5 });
 
-testFail("3ea",
-         "Invalid number (1:0)");
+testFail("3ea", "Invalid number (1:0)", { ecmaVersion: 5 });
 
-testFail("3in []",
-         "Identifier directly after number (1:1)");
+testFail("3in []", "Identifier directly after number (1:1)", { ecmaVersion: 5 });
 
-testFail("3e",
-         "Invalid number (1:0)");
+testFail("3e", "Invalid number (1:0)", { ecmaVersion: 5 });
 
-testFail("3e+",
-         "Invalid number (1:0)");
+testFail("3e+", "Invalid number (1:0)", { ecmaVersion: 5 });
 
-testFail("3e-",
-         "Invalid number (1:0)");
+testFail("3e-", "Invalid number (1:0)", { ecmaVersion: 5 });
 
-testFail("3x",
-         "Identifier directly after number (1:1)");
+testFail("3x", "Identifier directly after number (1:1)", { ecmaVersion: 5 });
 
-testFail("3x0",
-         "Identifier directly after number (1:1)");
+testFail("3x0", "Identifier directly after number (1:1)", { ecmaVersion: 5 });
 
-testFail("0x",
-         "Expected number in radix 16 (1:2)");
+testFail("0x", "Expected number in radix 16 (1:2)", { ecmaVersion: 5 });
 
-testFail("09",
-         "Invalid number (1:0)");
+testFail("09", "Invalid number (1:0)", { ecmaVersion: 5 });
 
-testFail("018",
-         "Invalid number (1:0)");
+testFail("018", "Invalid number (1:0)", { ecmaVersion: 5 });
 
-testFail("01a",
-         "Identifier directly after number (1:2)");
+testFail("01a", "Identifier directly after number (1:2)", { ecmaVersion: 5 });
 
-testFail("3in[]",
-         "Identifier directly after number (1:1)");
+testFail("3in[]", "Identifier directly after number (1:1)", { ecmaVersion: 5 });
 
-testFail("0x3in[]",
-         "Identifier directly after number (1:3)");
+testFail("0x3in[]", "Identifier directly after number (1:3)", { ecmaVersion: 5 });
 
-testFail("\"Hello\nWorld\"",
-         "Unterminated string constant (1:0)");
+testFail("\"Hello\nWorld\"", "Unterminated string constant (1:0)", { ecmaVersion: 5 });
 
-testFail("x\\",
-         "Expecting Unicode escape sequence \\uXXXX (1:2)");
+testFail("x\\", "Expecting Unicode escape sequence \\uXXXX (1:2)", { ecmaVersion: 5 });
 
-testFail("x\\u005c",
-         "Invalid Unicode escape (1:3)");
+testFail("x\\u005c", "Invalid Unicode escape (1:3)", { ecmaVersion: 5 });
 
-testFail("x\\u002a",
-         "Invalid Unicode escape (1:3)");
+testFail("x\\u002a", "Invalid Unicode escape (1:3)", { ecmaVersion: 5 });
 
-testFail("/",
-         "Unterminated regular expression (1:1)");
+testFail("/", "Unterminated regular expression (1:1)", { ecmaVersion: 5 });
 
-testFail("/test",
-         "Unterminated regular expression (1:1)");
+testFail("/test", "Unterminated regular expression (1:1)", { ecmaVersion: 5 });
 
-testFail("var x = /[a-z]/\\ux",
-         "Bad character escape sequence (1:8)");
+testFail("var x = /[a-z]/\\ux", "Bad character escape sequence (1:8)", { ecmaVersion: 5 });
 
-testFail("3 = 4",
-         "Assigning to rvalue (1:0)");
+testFail("3 = 4", "Assigning to rvalue (1:0)", { ecmaVersion: 5 });
 
-testFail("func() = 4",
-         "Assigning to rvalue (1:0)");
+testFail("func() = 4", "Assigning to rvalue (1:0)", { ecmaVersion: 5 });
 
-testFail("(1 + 1) = 10",
-         "Assigning to rvalue (1:0)");
+testFail("(1 + 1) = 10", "Assigning to rvalue (1:0)", { ecmaVersion: 5 });
 
-testFail("1++",
-         "Assigning to rvalue (1:0)");
+testFail("1++", "Assigning to rvalue (1:0)", { ecmaVersion: 5 });
 
-testFail("1--",
-         "Assigning to rvalue (1:0)");
+testFail("1--", "Assigning to rvalue (1:0)", { ecmaVersion: 5 });
 
-testFail("++1",
-         "Assigning to rvalue (1:2)");
+testFail("++1", "Assigning to rvalue (1:2)", { ecmaVersion: 5 });
 
-testFail("--1",
-         "Assigning to rvalue (1:2)");
+testFail("--1", "Assigning to rvalue (1:2)", { ecmaVersion: 5 });
 
-testFail("for((1 + 1) in list) process(x);",
-         "Assigning to rvalue (1:4)");
+testFail("for((1 + 1) in list) process(x);", "Assigning to rvalue (1:4)", { ecmaVersion: 5 });
 
-testFail("[",
-         "Unexpected token (1:1)");
+testFail("[", "Unexpected token (1:1)", { ecmaVersion: 5 });
 
-testFail("[,",
-         "Unexpected token (1:2)");
+testFail("[,", "Unexpected token (1:2)", { ecmaVersion: 5 });
 
-testFail("1 + {",
-         "Unexpected token (1:5)");
+testFail("1 + {", "Unexpected token (1:5)", { ecmaVersion: 5 });
 
-testFail("1 + { t:t ",
-         "Unexpected token (1:10)");
+testFail("1 + { t:t ", "Unexpected token (1:10)", { ecmaVersion: 5 });
 
-testFail("1 + { t:t,",
-         "Unexpected token (1:10)");
+testFail("1 + { t:t,", "Unexpected token (1:10)", { ecmaVersion: 5 });
 
-testFail("var x = /\n/",
-         "Unterminated regular expression (1:9)");
+testFail("var x = /\n/", "Unterminated regular expression (1:9)", { ecmaVersion: 5 });
 
-testFail("var x = \"\n",
-         "Unterminated string constant (1:8)");
+testFail("var x = \"\n", "Unterminated string constant (1:8)", { ecmaVersion: 5 });
 
-testFail("var if = 42",
-         "Unexpected token (1:4)");
+testFail("var if = 42", "Unexpected token (1:4)", { ecmaVersion: 5 });
 
-testFail("i + 2 = 42",
-         "Assigning to rvalue (1:0)");
+testFail("i + 2 = 42", "Assigning to rvalue (1:0)", { ecmaVersion: 5 });
 
-testFail("+i = 42",
-         "Assigning to rvalue (1:0)");
+testFail("+i = 42", "Assigning to rvalue (1:0)", { ecmaVersion: 5 });
 
-testFail("1 + (",
-         "Unexpected token (1:5)");
+testFail("1 + (", "Unexpected token (1:5)", { ecmaVersion: 5 });
 
-testFail("\n\n\n{",
-         "Unexpected token (4:1)");
+testFail("\n\n\n{", "Unexpected token (4:1)", { ecmaVersion: 5 });
 
-testFail("\n/* Some multiline\ncomment */\n)",
-         "Unexpected token (4:0)");
+testFail("\n/* Some multiline\ncomment */\n)", "Unexpected token (4:0)", { ecmaVersion: 5 });
 
-testFail("{ set 1 }",
-         "Unexpected token (1:6)");
+testFail("{ set 1 }", "Unexpected token (1:6)", { ecmaVersion: 5 });
 
-testFail("{ get 2 }",
-         "Unexpected token (1:6)");
+testFail("{ get 2 }", "Unexpected token (1:6)", { ecmaVersion: 5 });
 
-testFail("({ set: s(if) { } })",
-         "Unexpected token (1:10)");
+testFail("({ set: s(if) { } })", "Unexpected token (1:10)", { ecmaVersion: 5 });
 
-testFail("({ set s(.) { } })",
-         "Unexpected token (1:9)");
+testFail("({ set s(.) { } })", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("({ set: s() { } })",
-         "Unexpected token (1:12)");
+testFail("({ get i() { }, i: 42 })", "Redefinition of property (1:16)", { ecmaVersion: 5 });
 
-testFail("({ set: s(a, b) { } })",
-         "Unexpected token (1:16)");
+testFail("({ i: 42, get i() { } })", "Redefinition of property (1:14)", { ecmaVersion: 5 });
 
-testFail("({ get: g(d) { } })",
-         "Unexpected token (1:13)");
+testFail("({ set i(x) { }, i: 42 })", "Redefinition of property (1:17)", { ecmaVersion: 5 });
 
-testFail("({ get i() { }, i: 42 })",
-         "Redefinition of property (1:16)");
+testFail("({ i: 42, set i(x) { } })", "Redefinition of property (1:14)", { ecmaVersion: 5 });
 
-testFail("({ i: 42, get i() { } })",
-         "Redefinition of property (1:14)");
+testFail("({ get i() { }, get i() { } })", "Redefinition of property (1:20)", { ecmaVersion: 5 });
 
-testFail("({ set i(x) { }, i: 42 })",
-         "Redefinition of property (1:17)");
+testFail("({ set i(x) { }, set i(x) { } })", "Redefinition of property (1:21)", { ecmaVersion: 5 });
 
-testFail("({ i: 42, set i(x) { } })",
-         "Redefinition of property (1:14)");
-
-testFail("({ get i() { }, get i() { } })",
-         "Redefinition of property (1:20)");
-
-testFail("({ set i(x) { }, set i(x) { } })",
-         "Redefinition of property (1:21)");
-
-testFail("function t(...) { }",
-         "Unexpected token (1:11)");
+testFail("function t(...) { }", "Unexpected token (1:11)", { ecmaVersion: 5 });
 
 testFail("function t(...) { }",
          "Unexpected token (1:14)",
@@ -26900,408 +26837,280 @@ testFail("function t(...rest, b) { }",
          "Unexpected token (1:18)",
          { ecmaVersion: 6 });
 
-testFail("function t(if) { }",
-         "Unexpected token (1:11)");
+testFail("function t(if) { }", "Unexpected token (1:11)", { ecmaVersion: 5 });
 
-testFail("function t(true) { }",
-         "Unexpected token (1:11)");
+testFail("function t(true) { }", "Unexpected token (1:11)", { ecmaVersion: 5 });
 
-testFail("function t(false) { }",
-         "Unexpected token (1:11)");
+testFail("function t(false) { }", "Unexpected token (1:11)", { ecmaVersion: 5 });
 
-testFail("function t(null) { }",
-         "Unexpected token (1:11)");
+testFail("function t(null) { }", "Unexpected token (1:11)", { ecmaVersion: 5 });
 
-testFail("function null() { }",
-         "Unexpected token (1:9)");
+testFail("function null() { }", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("function true() { }",
-         "Unexpected token (1:9)");
+testFail("function true() { }", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("function false() { }",
-         "Unexpected token (1:9)");
+testFail("function false() { }", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("function if() { }",
-         "Unexpected token (1:9)");
+testFail("function if() { }", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("a b;",
-         "Unexpected token (1:2)");
+testFail("a b;", "Unexpected token (1:3)", { ecmaVersion: 5 });
 
-testFail("if.a;",
-         "Unexpected token (1:2)");
+testFail("if.a;", "Unexpected token (1:2)", { ecmaVersion: 5 });
 
-testFail("a if;",
-         "Unexpected token (1:2)");
+testFail("a if;", "Unexpected token (1:2)", { ecmaVersion: 5 });
 
-testFail("a class;",
-         "Unexpected token (1:2)");
+testFail("a class;", "Unexpected token (1:7)", { ecmaVersion: 5 });
 
-testFail("break\n",
-         "Unsyntactic break (1:0)");
+testFail("break\n", "Unsyntactic break (1:0)", { ecmaVersion: 5 });
 
-testFail("break 1;",
-         "Unexpected token (1:6)");
+testFail("break 1;", "Unexpected token (1:6)", { ecmaVersion: 5 });
 
-testFail("continue\n",
-         "Unsyntactic continue (1:0)");
+testFail("continue\n", "Unsyntactic continue (1:0)", { ecmaVersion: 5 });
 
-testFail("continue 2;",
-         "Unexpected token (1:9)");
+testFail("continue 2;", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("throw",
-         "Unexpected token (1:5)");
+testFail("throw", "Unexpected token (1:5)", { ecmaVersion: 5 });
 
-testFail("throw;",
-         "Unexpected token (1:5)");
+testFail("throw;", "Unexpected token (1:5)", { ecmaVersion: 5 });
 
-testFail("for (var i, i2 in {});",
-         "Unexpected token (1:15)");
+testFail("for (var i, i2 in {});", "Unexpected token (1:15)", { ecmaVersion: 5 });
 
-testFail("for ((i in {}));",
-         "Unexpected token (1:14)");
+testFail("for ((i in {}));", "Unexpected token (1:14)", { ecmaVersion: 5 });
 
-testFail("for (i + 1 in {});",
-         "Assigning to rvalue (1:5)");
+testFail("for (i + 1 in {});", "Assigning to rvalue (1:5)", { ecmaVersion: 5 });
 
-testFail("for (+i in {});",
-         "Assigning to rvalue (1:5)");
+testFail("for (+i in {});", "Assigning to rvalue (1:5)", { ecmaVersion: 5 });
 
-testFail("if(false)",
-         "Unexpected token (1:9)");
+testFail("if(false)", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("if(false) doThis(); else",
-         "Unexpected token (1:24)");
+testFail("if(false) doThis(); else", "Unexpected token (1:24)", { ecmaVersion: 5 });
 
-testFail("do",
-         "Unexpected token (1:2)");
+testFail("do", "Unexpected token (1:2)", { ecmaVersion: 5 });
 
-testFail("while(false)",
-         "Unexpected token (1:12)");
+testFail("while(false)", "Unexpected token (1:12)", { ecmaVersion: 5 });
 
-testFail("for(;;)",
-         "Unexpected token (1:7)");
+testFail("for(;;)", "Unexpected token (1:7)", { ecmaVersion: 5 });
 
-testFail("with(x)",
-         "Unexpected token (1:7)");
+testFail("with(x)", "Unexpected token (1:7)", { ecmaVersion: 5 });
 
-testFail("try { }",
-         "Missing catch or finally clause (1:0)");
+testFail("try { }", "Missing catch or finally clause (1:0)", { ecmaVersion: 5 });
 
-testFail("‿ = 10",
-         "Unexpected character '‿' (1:0)");
+testFail("‿ = 10", "Unexpected character '‿' (1:0)", { ecmaVersion: 5 });
 
-testFail("if(true) let a = 1;",
-         "Unexpected token (1:13)");
+testFail("if(true) let a = 1;", "Unexpected token (1:15)", { ecmaVersion: 5 });
 
-testFail("switch (c) { default: default: }",
-         "Multiple default clauses (1:22)");
+testFail("switch (c) { default: default: }", "Multiple default clauses (1:22)", { ecmaVersion: 5 });
 
-testFail("new X().\"s\"",
-         "Unexpected token (1:8)");
+testFail("new X().\"s\"", "Unexpected token (1:8)", { ecmaVersion: 5 });
 
-testFail("/*",
-         "Unterminated comment (1:0)");
+testFail("/*", "Unterminated comment (1:0)", { ecmaVersion: 5 });
 
-testFail("/*\n\n\n",
-         "Unterminated comment (1:0)");
+testFail("/*\n\n\n", "Unterminated comment (1:0)", { ecmaVersion: 5 });
 
-testFail("/**",
-         "Unterminated comment (1:0)");
+testFail("/**", "Unterminated comment (1:0)", { ecmaVersion: 5 });
 
-testFail("/*\n\n*",
-         "Unterminated comment (1:0)");
+testFail("/*\n\n*", "Unterminated comment (1:0)", { ecmaVersion: 5 });
 
-testFail("/*hello",
-         "Unterminated comment (1:0)");
+testFail("/*hello", "Unterminated comment (1:0)", { ecmaVersion: 5 });
 
-testFail("/*hello  *",
-         "Unterminated comment (1:0)");
+testFail("/*hello  *", "Unterminated comment (1:0)", { ecmaVersion: 5 });
 
-testFail("\n]",
-         "Unexpected token (2:0)");
+testFail("\n]", "Unexpected token (2:0)", { ecmaVersion: 5 });
 
-testFail("\r]",
-         "Unexpected token (2:0)");
+testFail("\r]", "Unexpected token (2:0)", { ecmaVersion: 5 });
 
-testFail("\r\n]",
-         "Unexpected token (2:0)");
+testFail("\r\n]", "Unexpected token (2:0)", { ecmaVersion: 5 });
 
-testFail("\n\r]",
-         "Unexpected token (3:0)");
+testFail("\n\r]", "Unexpected token (3:0)", { ecmaVersion: 5 });
 
-testFail("//\r\n]",
-         "Unexpected token (2:0)");
+testFail("//\r\n]", "Unexpected token (2:0)", { ecmaVersion: 5 });
 
-testFail("//\n\r]",
-         "Unexpected token (3:0)");
+testFail("//\n\r]", "Unexpected token (3:0)", { ecmaVersion: 5 });
 
-testFail("/a\\\n/",
-         "Unterminated regular expression (1:1)");
+testFail("/a\\\n/", "Unterminated regular expression (1:1)", { ecmaVersion: 5 });
 
-testFail("//\r \n]",
-         "Unexpected token (3:0)");
+testFail("//\r \n]", "Unexpected token (3:0)", { ecmaVersion: 5 });
 
-testFail("/*\r\n*/]",
-         "Unexpected token (2:2)");
+testFail("/*\r\n*/]", "Unexpected token (2:2)", { ecmaVersion: 5 });
 
-testFail("/*\n\r*/]",
-         "Unexpected token (3:2)");
+testFail("/*\n\r*/]", "Unexpected token (3:2)", { ecmaVersion: 5 });
 
-testFail("/*\r \n*/]",
-         "Unexpected token (3:2)");
+testFail("/*\r \n*/]", "Unexpected token (3:2)", { ecmaVersion: 5 });
 
-testFail("\\\\",
-         "Expecting Unicode escape sequence \\uXXXX (1:1)");
+testFail("\\\\", "Expecting Unicode escape sequence \\uXXXX (1:1)", { ecmaVersion: 5 });
 
-testFail("\\u005c",
-         "Invalid Unicode escape (1:2)");
+testFail("\\u005c", "Invalid Unicode escape (1:2)", { ecmaVersion: 5 });
 
-testFail("\\x",
-         "Expecting Unicode escape sequence \\uXXXX (1:1)");
+testFail("\\x", "Expecting Unicode escape sequence \\uXXXX (1:1)", { ecmaVersion: 5 });
 
-testFail("\\u0000",
-         "Invalid Unicode escape (1:2)");
+testFail("\\u0000", "Invalid Unicode escape (1:2)", { ecmaVersion: 5 });
 
-testFail("‌ = []",
-         "Unexpected character '‌' (1:0)");
+testFail("‌ = []", "Unexpected character '‌' (1:0)", { ecmaVersion: 5 });
 
-testFail("‍ = []",
-         "Unexpected character '‍' (1:0)");
+testFail("‍ = []", "Unexpected character '‍' (1:0)", { ecmaVersion: 5 });
 
-testFail("\"\\",
-         "Unterminated string constant (1:0)");
+testFail("\"\\", "Unterminated string constant (1:0)", { ecmaVersion: 5 });
 
-testFail("\"\\u",
-         "Bad character escape sequence (1:0)");
+testFail("\"\\u", "Bad character escape sequence (1:0)", { ecmaVersion: 5 });
 
-testFail("return",
-         "'return' outside of function (1:0)");
+testFail("return", "'return' outside of function (1:0)", { ecmaVersion: 5 });
 
-testFail("break",
-         "Unsyntactic break (1:0)");
+testFail("break", "Unsyntactic break (1:0)", { ecmaVersion: 5 });
 
-testFail("continue",
-         "Unsyntactic continue (1:0)");
+testFail("continue", "Unsyntactic continue (1:0)", { ecmaVersion: 5 });
 
-testFail("switch (x) { default: continue; }",
-         "Unsyntactic continue (1:22)");
+testFail("switch (x) { default: continue; }", "Unsyntactic continue (1:22)", { ecmaVersion: 5 });
 
-testFail("do { x } *",
-         "Unexpected token (1:9)");
+testFail("do { x } *", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("while (true) { break x; }",
-         "Unsyntactic break (1:15)");
+testFail("while (true) { break x; }", "Unsyntactic break (1:15)", { ecmaVersion: 5 });
 
-testFail("while (true) { continue x; }",
-         "Unsyntactic continue (1:15)");
+testFail("while (true) { continue x; }", "Unsyntactic continue (1:15)", { ecmaVersion: 5 });
 
-testFail("x: while (true) { (function () { break x; }); }",
-         "Unsyntactic break (1:33)");
+testFail("x: while (true) { (function () { break x; }); }", "Unsyntactic break (1:33)", { ecmaVersion: 5 });
 
-testFail("x: while (true) { (function () { continue x; }); }",
-         "Unsyntactic continue (1:33)");
+testFail("x: while (true) { (function () { continue x; }); }", "Unsyntactic continue (1:33)", { ecmaVersion: 5 });
 
-testFail("x: while (true) { (function () { break; }); }",
-         "Unsyntactic break (1:33)");
+testFail("x: while (true) { (function () { break; }); }", "Unsyntactic break (1:33)", { ecmaVersion: 5 });
 
-testFail("x: while (true) { (function () { continue; }); }",
-         "Unsyntactic continue (1:33)");
+testFail("x: while (true) { (function () { continue; }); }", "Unsyntactic continue (1:33)", { ecmaVersion: 5 });
 
-testFail("x: while (true) { x: while (true) { } }",
-         "Label 'x' is already declared (1:18)");
+testFail("x: while (true) { x: while (true) { } }", "Label 'x' is already declared (1:18)", { ecmaVersion: 5 });
 
-testFail("(function () { 'use strict'; delete i; }())",
-         "Deleting local variable in strict mode (1:29)");
+testFail("(function () { 'use strict'; delete i; }())", "Deleting local variable in strict mode (1:29)", { ecmaVersion: 5 });
 
-testFail("(function () { 'use strict'; with (i); }())",
-         "'with' in strict mode (1:29)");
+testFail("(function () { 'use strict'; with (i); }())", "'with' in strict mode (1:29)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ({ i: 42, i: 42 }) }",
-         "Redefinition of property (1:42)");
+testFail("function hello() {'use strict'; ({ i: 42, i: 42 }) }", "Redefinition of property (1:42)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ({ hasOwnProperty: 42, hasOwnProperty: 42 }) }",
-         "Redefinition of property (1:55)");
+testFail("function hello() {'use strict'; ({ hasOwnProperty: 42, hasOwnProperty: 42 }) }", "Redefinition of property (1:55)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; var eval = 10; }",
-         "Binding eval in strict mode (1:36)");
+testFail("function hello() {'use strict'; var eval = 10; }", "Binding eval in strict mode (1:36)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; var arguments = 10; }",
-         "Binding arguments in strict mode (1:36)");
+testFail("function hello() {'use strict'; var arguments = 10; }", "Binding arguments in strict mode (1:36)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; try { } catch (eval) { } }",
-         "Binding eval in strict mode (1:47)");
+testFail("function hello() {'use strict'; try { } catch (eval) { } }", "Binding eval in strict mode (1:47)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; try { } catch (arguments) { } }",
-         "Binding arguments in strict mode (1:47)");
+testFail("function hello() {'use strict'; try { } catch (arguments) { } }", "Binding arguments in strict mode (1:47)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; eval = 10; }",
-         "Assigning to eval in strict mode (1:32)");
+testFail("function hello() {'use strict'; eval = 10; }", "Assigning to eval in strict mode (1:32)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; arguments = 10; }",
-         "Assigning to arguments in strict mode (1:32)");
+testFail("function hello() {'use strict'; arguments = 10; }", "Assigning to arguments in strict mode (1:32)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ++eval; }",
-         "Assigning to eval in strict mode (1:34)");
+testFail("function hello() {'use strict'; ++eval; }", "Assigning to eval in strict mode (1:34)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; --eval; }",
-         "Assigning to eval in strict mode (1:34)");
+testFail("function hello() {'use strict'; --eval; }", "Assigning to eval in strict mode (1:34)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ++arguments; }",
-         "Assigning to arguments in strict mode (1:34)");
+testFail("function hello() {'use strict'; ++arguments; }", "Assigning to arguments in strict mode (1:34)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; --arguments; }",
-         "Assigning to arguments in strict mode (1:34)");
+testFail("function hello() {'use strict'; --arguments; }", "Assigning to arguments in strict mode (1:34)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; eval++; }",
-         "Assigning to eval in strict mode (1:32)");
+testFail("function hello() {'use strict'; eval++; }", "Assigning to eval in strict mode (1:32)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; eval--; }",
-         "Assigning to eval in strict mode (1:32)");
+testFail("function hello() {'use strict'; eval--; }", "Assigning to eval in strict mode (1:32)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; arguments++; }",
-         "Assigning to arguments in strict mode (1:32)");
+testFail("function hello() {'use strict'; arguments++; }", "Assigning to arguments in strict mode (1:32)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; arguments--; }",
-         "Assigning to arguments in strict mode (1:32)");
+testFail("function hello() {'use strict'; arguments--; }", "Assigning to arguments in strict mode (1:32)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; function eval() { } }",
-         "Defining 'eval' in strict mode (1:41)");
+testFail("function hello() {'use strict'; function eval() { } }", "Defining 'eval' in strict mode (1:41)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; function arguments() { } }",
-         "Defining 'arguments' in strict mode (1:41)");
+testFail("function hello() {'use strict'; function arguments() { } }", "Defining 'arguments' in strict mode (1:41)", { ecmaVersion: 5 });
 
-testFail("function eval() {'use strict'; }",
-         "Defining 'eval' in strict mode (1:9)");
+testFail("function eval() {'use strict'; }", "Defining 'eval' in strict mode (1:9)", { ecmaVersion: 5 });
 
-testFail("function arguments() {'use strict'; }",
-         "Defining 'arguments' in strict mode (1:9)");
+testFail("function arguments() {'use strict'; }", "Defining 'arguments' in strict mode (1:9)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; (function eval() { }()) }",
-         "Defining 'eval' in strict mode (1:42)");
+testFail("function hello() {'use strict'; (function eval() { }()) }", "Defining 'eval' in strict mode (1:42)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; (function arguments() { }()) }",
-         "Defining 'arguments' in strict mode (1:42)");
+testFail("function hello() {'use strict'; (function arguments() { }()) }", "Defining 'arguments' in strict mode (1:42)", { ecmaVersion: 5 });
 
-testFail("(function eval() {'use strict'; })()",
-         "Defining 'eval' in strict mode (1:10)");
+testFail("(function eval() {'use strict'; })()", "Defining 'eval' in strict mode (1:10)", { ecmaVersion: 5 });
 
-testFail("(function arguments() {'use strict'; })()",
-         "Defining 'arguments' in strict mode (1:10)");
+testFail("(function arguments() {'use strict'; })()", "Defining 'arguments' in strict mode (1:10)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ({ s: function eval() { } }); }",
-         "Defining 'eval' in strict mode (1:47)");
+testFail("function hello() {'use strict'; ({ s: function eval() { } }); }", "Defining 'eval' in strict mode (1:47)", { ecmaVersion: 5 });
 
-testFail("(function package() {'use strict'; })()",
-         "Defining 'package' in strict mode (1:10)");
+testFail("(function package() {'use strict'; })()", "Defining 'package' in strict mode (1:10)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ({ i: 10, set s(eval) { } }); }",
-         "Defining 'eval' in strict mode (1:48)");
+testFail("function hello() {'use strict'; ({ i: 10, set s(eval) { } }); }", "Defining 'eval' in strict mode (1:48)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ({ set s(eval) { } }); }",
-         "Defining 'eval' in strict mode (1:41)");
+testFail("function hello() {'use strict'; ({ set s(eval) { } }); }", "Defining 'eval' in strict mode (1:41)", { ecmaVersion: 5 });
 
-testFail("function hello() {'use strict'; ({ s: function s(eval) { } }); }",
-         "Defining 'eval' in strict mode (1:49)");
+testFail("function hello() {'use strict'; ({ s: function s(eval) { } }); }", "Defining 'eval' in strict mode (1:49)", { ecmaVersion: 5 });
 
-testFail("function hello(eval) {'use strict';}",
-         "Defining 'eval' in strict mode (1:15)");
+testFail("function hello(eval) {'use strict';}", "Defining 'eval' in strict mode (1:15)", { ecmaVersion: 5 });
 
-testFail("function hello(arguments) {'use strict';}",
-         "Defining 'arguments' in strict mode (1:15)");
+testFail("function hello(arguments) {'use strict';}", "Defining 'arguments' in strict mode (1:15)", { ecmaVersion: 5 });
 
-testFail("function hello() { 'use strict'; function inner(eval) {} }",
-         "Defining 'eval' in strict mode (1:48)");
+testFail("function hello() { 'use strict'; function inner(eval) {} }", "Defining 'eval' in strict mode (1:48)", { ecmaVersion: 5 });
 
-testFail("function hello() { 'use strict'; function inner(arguments) {} }",
-         "Defining 'arguments' in strict mode (1:48)");
+testFail("function hello() { 'use strict'; function inner(arguments) {} }", "Defining 'arguments' in strict mode (1:48)", { ecmaVersion: 5 });
 
-testFail("function hello() { 'use strict'; \"\\1\"; }",
-         "Octal literal in strict mode (1:34)");
+testFail("function hello() { 'use strict'; \"\\1\"; }", "Octal literal in strict mode (1:34)", { ecmaVersion: 5 });
 
-testFail("function hello() { 'use strict'; 021; }",
-         "Invalid number (1:33)");
+testFail("function hello() { 'use strict'; 021; }", "Invalid number (1:33)", { ecmaVersion: 5 });
 
-testFail("function hello() { 'use strict'; ({ \"\\1\": 42 }); }",
-         "Octal literal in strict mode (1:37)");
+testFail("function hello() { 'use strict'; ({ \"\\1\": 42 }); }", "Octal literal in strict mode (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello() { 'use strict'; ({ 021: 42 }); }",
-         "Invalid number (1:36)");
+testFail("function hello() { 'use strict'; ({ 021: 42 }); }", "Invalid number (1:36)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; function inner() { \"octal directive\\1\"; } }",
-         "Octal literal in strict mode (1:68)");
+testFail("function hello() { \"use strict\"; function inner() { \"octal directive\\1\"; } }", "Octal literal in strict mode (1:68)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; var implements; }",
-         "The keyword 'implements' is reserved (1:37)");
+testFail("function hello() { \"use strict\"; var implements; }", "The keyword 'implements' is reserved (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; var interface; }",
-         "The keyword 'interface' is reserved (1:37)");
+testFail("function hello() { \"use strict\"; var interface; }", "The keyword 'interface' is reserved (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; var package; }",
-         "The keyword 'package' is reserved (1:37)");
+testFail("function hello() { \"use strict\"; var package; }", "The keyword 'package' is reserved (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; var private; }",
-         "The keyword 'private' is reserved (1:37)");
+testFail("function hello() { \"use strict\"; var private; }", "The keyword 'private' is reserved (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; var protected; }",
-         "The keyword 'protected' is reserved (1:37)");
+testFail("function hello() { \"use strict\"; var protected; }", "The keyword 'protected' is reserved (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; var public; }",
-         "The keyword 'public' is reserved (1:37)");
+testFail("function hello() { \"use strict\"; var public; }", "The keyword 'public' is reserved (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello() { \"use strict\"; var static; }",
-         "The keyword 'static' is reserved (1:37)");
+testFail("function hello() { \"use strict\"; var static; }", "The keyword 'static' is reserved (1:37)", { ecmaVersion: 5 });
 
-testFail("function hello(static) { \"use strict\"; }",
-         "Defining 'static' in strict mode (1:15)");
+testFail("function hello(static) { \"use strict\"; }", "Defining 'static' in strict mode (1:15)", { ecmaVersion: 5 });
 
-testFail("function static() { \"use strict\"; }",
-         "Defining 'static' in strict mode (1:9)");
+testFail("function static() { \"use strict\"; }", "Defining 'static' in strict mode (1:9)", { ecmaVersion: 5 });
 
-testFail("\"use strict\"; function static() { }",
-         "The keyword 'static' is reserved (1:23)");
+testFail("\"use strict\"; function static() { }", "The keyword 'static' is reserved (1:23)", { ecmaVersion: 5 });
 
-testFail("function a(t, t) { \"use strict\"; }",
-         "Argument name clash in strict mode (1:14)");
+testFail("function a(t, t) { \"use strict\"; }", "Argument name clash in strict mode (1:14)", { ecmaVersion: 5 });
 
-testFail("function a(eval) { \"use strict\"; }",
-         "Defining 'eval' in strict mode (1:11)");
+testFail("function a(eval) { \"use strict\"; }", "Defining 'eval' in strict mode (1:11)", { ecmaVersion: 5 });
 
-testFail("function a(package) { \"use strict\"; }",
-         "Defining 'package' in strict mode (1:11)");
+testFail("function a(package) { \"use strict\"; }", "Defining 'package' in strict mode (1:11)", { ecmaVersion: 5 });
 
-testFail("function a() { \"use strict\"; function b(t, t) { }; }",
-         "Argument name clash in strict mode (1:43)");
+testFail("function a() { \"use strict\"; function b(t, t) { }; }", "Argument name clash in strict mode (1:43)", { ecmaVersion: 5 });
 
-testFail("(function a(t, t) { \"use strict\"; })",
-         "Argument name clash in strict mode (1:15)");
+testFail("(function a(t, t) { \"use strict\"; })", "Argument name clash in strict mode (1:15)", { ecmaVersion: 5 });
 
-testFail("function a() { \"use strict\"; (function b(t, t) { }); }",
-         "Argument name clash in strict mode (1:44)");
+testFail("function a() { \"use strict\"; (function b(t, t) { }); }", "Argument name clash in strict mode (1:44)", { ecmaVersion: 5 });
 
-testFail("(function a(eval) { \"use strict\"; })",
-         "Defining 'eval' in strict mode (1:12)");
+testFail("(function a(eval) { \"use strict\"; })", "Defining 'eval' in strict mode (1:12)", { ecmaVersion: 5 });
 
-testFail("(function a(package) { \"use strict\"; })",
-         "Defining 'package' in strict mode (1:12)");
+testFail("(function a(package) { \"use strict\"; })", "Defining 'package' in strict mode (1:12)", { ecmaVersion: 5 });
 
-testFail("var this = 10;", "Unexpected token (1:4)");
+testFail("var this = 10;", "Unexpected token (1:4)", { ecmaVersion: 5 });
 
-testFail("throw\n10;", "Illegal newline after throw (1:5)");
+testFail("throw\n10;", "Illegal newline after throw (1:5)", { ecmaVersion: 5 });
 
 
 // ECMA < 6 mode should work as before
 
-testFail("const a;", "Unexpected token (1:6)");
+testFail("const a;", "Unexpected token (1:7)", { ecmaVersion: 5 });
 
-testFail("let x;", "Unexpected token (1:4)");
+testFail("let x;", "Unexpected token (1:5)", { ecmaVersion: 5 });
 
-testFail("const a = 1;", "Unexpected token (1:6)");
+testFail("const a = 1;", "Unexpected token (1:8)", { ecmaVersion: 5 });
 
-testFail("let a = 1;", "Unexpected token (1:4)");
+testFail("let a = 1;", "Unexpected token (1:6)", { ecmaVersion: 5 });
 
-testFail("for(const x = 0;;);", "Unexpected token (1:10)");
+testFail("for(const x = 0;;);", "Unexpected token (1:12)", { ecmaVersion: 5 });
 
-testFail("for(let x = 0;;);", "Unexpected token (1:8)");
+testFail("for(let x = 0;;);", "Unexpected token (1:10)", { ecmaVersion: 5 });
 
 test("let++", {
   type: "Program",
@@ -27367,7 +27176,7 @@ test("let++", {
       }
     }
   ]
-});
+}, { ecmaVersion: 5, locations: true });
 
 // ECMA 6 support
 
