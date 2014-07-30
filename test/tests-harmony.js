@@ -14846,10 +14846,6 @@ testFail("({ obj:20 }) = 42", "Assigning to rvalue (1:7)", {ecmaVersion: 6});
 
 testFail("( { get x() {} } ) = 0", "Unexpected token (1:8)", {ecmaVersion: 6});
 
-testFail("x \n is y", "Unexpected token (2:5)", {ecmaVersion: 6});
-
-testFail("x \n isnt y", "Unexpected token (2:7)", {ecmaVersion: 6});
-
 testFail("function default() {}", "Unexpected token (1:9)", {ecmaVersion: 6});
 
 testFail("function hello() {'use strict'; ({ i: 10, s(eval) { } }); }", "Defining 'eval' in strict mode (1:44)", {ecmaVersion: 6});
@@ -14904,216 +14900,23 @@ testFail("(10) => 00", "Unexpected token (1:1)", {ecmaVersion: 6});
 
 testFail("(10, 20) => 00", "Unexpected token (1:1)", {ecmaVersion: 6});
 
-testFail("yield v", "Unexpected token (1:7)", {ecmaVersion: 6});
+testFail("yield v", "Unexpected token (1:0)", {ecmaVersion: 6});
 
-testFail("yield 10", "Unexpected token (1:6)", {ecmaVersion: 6});
+testFail("yield 10", "Unexpected token (1:0)", {ecmaVersion: 6});
 
-test("yield* 10", {
-  type: "Program",
-  body: [{
-    type: "ExpressionStatement",
-    expression: {
-      type: "BinaryExpression",
-      operator: "*",
-      left: {
-        type: "Identifier",
-        name: "yield",
-        range: [0, 5],
-        loc: {
-          start: {line: 1, column: 0},
-          end: {line: 1, column: 5}
-        }
-      },
-      right: {
-        type: "Literal",
-        value: 10,
-        raw: "10",
-        range: [7, 9],
-        loc: {
-          start: {line: 1, column: 7},
-          end: {line: 1, column: 9}
-        }
-      },
-      range: [0, 9],
-      loc: {
-        start: {line: 1, column: 0},
-        end: {line: 1, column: 9}
-      }
-    },
-    range: [0, 9],
-    loc: {
-      start: {line: 1, column: 0},
-      end: {line: 1, column: 9}
-    }
-  }],
-  range: [0, 9],
-  loc: {
-    start: {line: 1, column: 0},
-    end: {line: 1, column: 9}
-  }
-}, {
-  ecmaVersion: 6,
-  ranges: true,
-  locations: true
-});
+testFail("yield* 10", "Unexpected token (1:0)", {ecmaVersion: 6});
 
-test("e => yield* 10", {
-  type: "Program",
-  body: [{
-    type: "ExpressionStatement",
-    expression: {
-      type: "ArrowFunctionExpression",
-      id: null,
-      params: [{
-        type: "Identifier",
-        name: "e",
-        range: [0, 1],
-        loc: {
-          start: {line: 1, column: 0},
-          end: {line: 1, column: 1}
-        }
-      }],
-      defaults: [],
-      body: {
-        type: "BinaryExpression",
-        operator: "*",
-        left: {
-          type: "Identifier",
-          name: "yield",
-          range: [5, 10],
-          loc: {
-            start: {line: 1, column: 5},
-            end: {line: 1, column: 10}
-          }
-        },
-        right: {
-          type: "Literal",
-          value: 10,
-          raw: "10",
-          range: [12, 14],
-          loc: {
-            start: {line: 1, column: 12},
-            end: {line: 1, column: 14}
-          }
-        },
-        range: [5, 14],
-        loc: {
-          start: {line: 1, column: 5},
-          end: {line: 1, column: 14}
-        }
-      },
-      rest: null,
-      generator: false,
-      expression: true,
-      range: [0, 14],
-      loc: {
-        start: {line: 1, column: 0},
-        end: {line: 1, column: 14}
-      }
-    },
-    range: [0, 14],
-    loc: {
-      start: {line: 1, column: 0},
-      end: {line: 1, column: 14}
-    }
-  }],
-  range: [0, 14],
-  loc: {
-    start: {line: 1, column: 0},
-    end: {line: 1, column: 14}
-  }
-}, {
-  ecmaVersion: 6,
-  ranges: true,
-  locations: true
-});
+testFail("e => yield* 10", "Unexpected token (1:5)", {ecmaVersion: 6});
 
-testFail("(function () { yield 10 })", "Unexpected token (1:21)", {ecmaVersion: 6});
+testFail("(function () { yield 10 })", "Unexpected token (1:15)", {ecmaVersion: 6});
 
-test("(function () { yield* 10 })", {
-  type: "Program",
-  body: [{
-    type: "ExpressionStatement",
-    expression: {
-      type: "FunctionExpression",
-      id: null,
-      params: [],
-      defaults: [],
-      body: {
-        type: "BlockStatement",
-        body: [{
-          type: "ExpressionStatement",
-          expression: {
-            type: "BinaryExpression",
-            operator: "*",
-            left: {
-              type: "Identifier",
-              name: "yield",
-              range: [15, 20],
-              loc: {
-                start: {line: 1, column: 15},
-                end: {line: 1, column: 20}
-              }
-            },
-            right: {
-              type: "Literal",
-              value: 10,
-              raw: "10",
-              range: [22, 24],
-              loc: {
-                start: {line: 1, column: 22},
-                end: {line: 1, column: 24}
-              }
-            },
-            range: [15, 24],
-            loc: {
-              start: {line: 1, column: 15},
-              end: {line: 1, column: 24}
-            }
-          },
-          range: [15, 24],
-          loc: {
-            start: {line: 1, column: 15},
-            end: {line: 1, column: 24}
-          }
-        }],
-        range: [13, 26],
-        loc: {
-          start: {line: 1, column: 13},
-          end: {line: 1, column: 26}
-        }
-      },
-      rest: null,
-      generator: false,
-      expression: false,
-      range: [0, 27],
-      loc: {
-        start: {line: 1, column: 0},
-        end: {line: 1, column: 27}
-      }
-    },
-    range: [0, 27],
-    loc: {
-      start: {line: 1, column: 0},
-      end: {line: 1, column: 27}
-    }
-  }],
-  range: [0, 27],
-  loc: {
-    start: {line: 1, column: 0},
-    end: {line: 1, column: 27}
-  }
-}, {
-  ecmaVersion: 6,
-  ranges: true,
-  locations: true
-});
+testFail("(function () { yield* 10 })", "Unexpected token (1:15)", {ecmaVersion: 6});
 
-testFail("(function() { \"use strict\"; f(yield v) })", "Unexpected token (1:37)", {ecmaVersion: 6});
+testFail("(function() { \"use strict\"; f(yield v) })", "Unexpected token (1:30)", {ecmaVersion: 6});
 
 testFail("var obj = { *test** }", "Unexpected token (1:17)", {ecmaVersion: 6});
 
-testFail("class A extends yield B { }", "Unexpected token (1:24)", {ecmaVersion: 6});
+testFail("class A extends yield B { }", "Unexpected token (1:16)", {ecmaVersion: 6});
 
 testFail("class default", "Unexpected token (1:6)", {ecmaVersion: 6});
 

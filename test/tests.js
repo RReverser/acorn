@@ -26853,13 +26853,9 @@ testFail("function false() { }", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
 testFail("function if() { }", "Unexpected token (1:9)", { ecmaVersion: 5 });
 
-testFail("a b;", "Unexpected token (1:3)", { ecmaVersion: 5 });
-
 testFail("if.a;", "Unexpected token (1:2)", { ecmaVersion: 5 });
 
 testFail("a if;", "Unexpected token (1:2)", { ecmaVersion: 5 });
-
-testFail("a class;", "Unexpected token (1:7)", { ecmaVersion: 5 });
 
 testFail("break\n", "Unsyntactic break (1:0)", { ecmaVersion: 5 });
 
@@ -26896,8 +26892,6 @@ testFail("with(x)", "Unexpected token (1:7)", { ecmaVersion: 5 });
 testFail("try { }", "Missing catch or finally clause (1:0)", { ecmaVersion: 5 });
 
 testFail("‿ = 10", "Unexpected character '‿' (1:0)", { ecmaVersion: 5 });
-
-testFail("if(true) let a = 1;", "Unexpected token (1:15)", { ecmaVersion: 5 });
 
 testFail("switch (c) { default: default: }", "Multiple default clauses (1:22)", { ecmaVersion: 5 });
 
@@ -27099,14 +27093,6 @@ testFail("throw\n10;", "Illegal newline after throw (1:5)", { ecmaVersion: 5 });
 
 
 // ECMA < 6 mode should work as before
-
-testFail("const a;", "Unexpected token (1:7)", { ecmaVersion: 5 });
-
-testFail("let x;", "Unexpected token (1:5)", { ecmaVersion: 5 });
-
-testFail("const a = 1;", "Unexpected token (1:8)", { ecmaVersion: 5 });
-
-testFail("let a = 1;", "Unexpected token (1:6)", { ecmaVersion: 5 });
 
 testFail("for(const x = 0;;);", "Unexpected token (1:12)", { ecmaVersion: 5 });
 

@@ -6,143 +6,7 @@ if (typeof exports != "undefined") {
   var testAssert = require("./driver.js").testAssert;
 }
 
-test("f = uint x => x * 2", {
-  type: "Program",
-  start: 0,
-  end: 19,
-  body: [{
-    type: "ExpressionStatement",
-    start: 0,
-    end: 19,
-    expression: {
-      type: "AssignmentExpression",
-      start: 0,
-      end: 19,
-      operator: "=",
-      left: {
-        type: "Identifier",
-        start: 0,
-        end: 1,
-        name: "f"
-      },
-      right: {
-        type: "ArrowFunctionExpression",
-        start: 4,
-        end: 19,
-        id: null,
-        params: [{
-          type: "Identifier",
-          start: 9,
-          end: 10,
-          name: "x"
-        }],
-        defaults: [],
-        rest: null,
-        generator: false,
-        binaryType: {
-          type: "Identifier",
-          start: 4,
-          end: 8,
-          name: "uint"
-        },
-        body: {
-          type: "BinaryExpression",
-          start: 14,
-          end: 19,
-          left: {
-            type: "Identifier",
-            start: 14,
-            end: 15,
-            name: "x"
-          },
-          operator: "*",
-          right: {
-            type: "Literal",
-            start: 18,
-            end: 19,
-            value: 2,
-            raw: "2"
-          }
-        },
-        expression: true
-      }
-    }
-  }]
-});
-
-test("f = uint x => { return x * 2 }", {
-  type: "Program",
-  start: 0,
-  end: 30,
-  body: [{
-    type: "ExpressionStatement",
-    start: 0,
-    end: 30,
-    expression: {
-      type: "AssignmentExpression",
-      start: 0,
-      end: 30,
-      operator: "=",
-      left: {
-        type: "Identifier",
-        start: 0,
-        end: 1,
-        name: "f"
-      },
-      right: {
-        type: "ArrowFunctionExpression",
-        start: 4,
-        end: 30,
-        id: null,
-        params: [{
-          type: "Identifier",
-          start: 9,
-          end: 10,
-          name: "x"
-        }],
-        defaults: [],
-        rest: null,
-        generator: false,
-        binaryType: {
-          type: "Identifier",
-          start: 4,
-          end: 8,
-          name: "uint"
-        },
-        body: {
-          type: "BlockStatement",
-          start: 14,
-          end: 30,
-          body: [{
-            type: "ReturnStatement",
-            start: 16,
-            end: 28,
-            argument: {
-              type: "BinaryExpression",
-              start: 23,
-              end: 28,
-              left: {
-                type: "Identifier",
-                start: 23,
-                end: 24,
-                name: "x"
-              },
-              operator: "*",
-              right: {
-                type: "Literal",
-                start: 27,
-                end: 28,
-                value: 2,
-                raw: "2"
-              }
-            }
-          }]
-        },
-        expression: false
-      }
-    }
-  }]
-});
+// success tests
 
 test("f = uint (x, y) => x + y", {
   type: "Program",
@@ -381,3 +245,211 @@ test("f = uint func(x, y) { return x + y }", {
     }
   }]
 });
+
+test("f = uint of => !of", {
+  type: "Program",
+  start: 0,
+  end: 18,
+  body: [{
+    type: "ExpressionStatement",
+    start: 0,
+    end: 18,
+    expression: {
+      type: "AssignmentExpression",
+      start: 0,
+      end: 18,
+      operator: "=",
+      left: {
+        type: "Identifier",
+        start: 0,
+        end: 1,
+        name: "f"
+      },
+      right: {
+        type: "ArrowFunctionExpression",
+        start: 4,
+        end: 18,
+        id: null,
+        params: [{
+          type: "Identifier",
+          start: 9,
+          end: 11,
+          name: "of"
+        }],
+        defaults: [],
+        rest: null,
+        generator: false,
+        binaryType: {
+          type: "Identifier",
+          start: 4,
+          end: 8,
+          name: "uint"
+        },
+        body: {
+          type: "UnaryExpression",
+          start: 15,
+          end: 18,
+          operator: "!",
+          prefix: true,
+          argument: {
+            type: "Identifier",
+            start: 16,
+            end: 18,
+            name: "of"
+          }
+        },
+        expression: true
+      }
+    }
+  }]
+});
+
+test("uint x()", {
+  type: "Program",
+  start: 0,
+  end: 8,
+  body: [{
+    type: "VariableDeclaration",
+    start: 0,
+    end: 8,
+    declarations: [{
+      type: "VariableDeclarator",
+      start: 5,
+      end: 8,
+      id: {
+        type: "CallPattern",
+        start: 5,
+        end: 8,
+        callee: {
+          type: "Identifier",
+          start: 5,
+          end: 6,
+          name: "x"
+        },
+        arguments: []
+      },
+      init: null
+    }],
+    kind: "typed",
+    binaryType: {
+      type: "Identifier",
+      start: 0,
+      end: 4,
+      name: "uint"
+    }
+  }]
+});
+
+test("uint x, y()", {
+  type: "Program",
+  start: 0,
+  end: 11,
+  body: [{
+    type: "VariableDeclaration",
+    start: 0,
+    end: 11,
+    declarations: [
+      {
+        type: "VariableDeclarator",
+        start: 5,
+        end: 6,
+        id: {
+          type: "Identifier",
+          start: 5,
+          end: 6,
+          name: "x"
+        },
+        init: null
+      },
+      {
+        type: "VariableDeclarator",
+        start: 8,
+        end: 11,
+        id: {
+          type: "CallPattern",
+          start: 8,
+          end: 11,
+          callee: {
+            type: "Identifier",
+            start: 8,
+            end: 9,
+            name: "y"
+          },
+          arguments: []
+        },
+        init: null
+      }
+    ],
+    kind: "typed",
+    binaryType: {
+      type: "Identifier",
+      start: 0,
+      end: 4,
+      name: "uint"
+    }
+  }]
+});
+
+test("uint x = 0, y = 1", {
+  type: "Program",
+  start: 0,
+  end: 17,
+  body: [{
+    type: "VariableDeclaration",
+    start: 0,
+    end: 17,
+    declarations: [
+      {
+        type: "VariableDeclarator",
+        start: 5,
+        end: 10,
+        id: {
+          type: "Identifier",
+          start: 5,
+          end: 6,
+          name: "x"
+        },
+        init: {
+          type: "Literal",
+          start: 9,
+          end: 10,
+          value: 0,
+          raw: "0"
+        }
+      },
+      {
+        type: "VariableDeclarator",
+        start: 12,
+        end: 17,
+        id: {
+          type: "Identifier",
+          start: 12,
+          end: 13,
+          name: "y"
+        },
+        init: {
+          type: "Literal",
+          start: 16,
+          end: 17,
+          value: 1,
+          raw: "1"
+        }
+      }
+    ],
+    kind: "typed",
+    binaryType: {
+      type: "Identifier",
+      start: 0,
+      end: 4,
+      name: "uint"
+    }
+  }]
+});
+
+// fail tests
+
+testFail("uint x() {}, y", "Unexpected token (1:11)");
+
+testFail("uint x, y() {}", "Unexpected token (1:12)");
+
+testFail("uint x() = 1", "Unexpected token (1:9)");

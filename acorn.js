@@ -1420,10 +1420,12 @@
       // next token is a colon and the expression was a simple
       // Identifier node, we switch to interpreting it as a label.
     default:
-      var maybeName = tokVal, expr = parseExpression();
+      var maybeName = tokVal, expr = parseExpression(false, false, true);
       if (starttype === _name && expr.type === "Identifier" && eat(_colon))
         return parseLabeledStatement(node, maybeName, expr);
-      else return parseExpressionStatement(node, expr);
+      if (expr.type === "VariableDeclaration" || expr.type === "FunctionDeclaration")
+        return expr;
+      return parseExpressionStatement(node, expr);
     }
   }
   
@@ -1699,11 +1701,18 @@
     return finishNode(node, type);
   }
 
+  // Initialize empty variable declaration.
+
+  function initVar(node, kind) {
+    node.declarations = [];
+    node.kind = kind;
+    node.binaryType = null;
+  }
+
   // Parse a list of variable declarations.
 
   function parseVar(node, noInOf, kind) {
-    node.declarations = [];
-    node.kind = kind;
+    initVar(node, kind);
     for (;;) {
       var decl = startNode();
       decl.id = options.ecmaVersion >= 6 ? toAssignable(parseExprAtom()) : parseIdent();
@@ -1727,8 +1736,8 @@
   // sequences (in argument lists, array literals, or object literals)
   // or the `in` operator (in for loops initalization expressions).
 
-  function parseExpression(noComma, noInOf) {
-    var expr = parseMaybeAssign(noInOf);
+  function parseExpression(noComma, noInOf, isStatement) {
+    var expr = parseMaybeAssign(noInOf, isStatement);
     if (!noComma && tokType === _comma) {
       var node = startNodeFrom(expr);
       node.expressions = [expr];
@@ -1741,8 +1750,8 @@
   // Parse an assignment expression. This includes applications of
   // operators like `+=`.
 
-  function parseMaybeAssign(noInOf) {
-    var left = parseMaybeConditional(noInOf);
+  function parseMaybeAssign(noInOf, isStatement) {
+    var left = parseMaybeConditional(noInOf, isStatement);
     if (tokType.isAssign) {
       var node = startNodeFrom(left);
       node.operator = tokVal;
@@ -1757,8 +1766,8 @@
 
   // Parse a ternary conditional (`?:`) operator.
 
-  function parseMaybeConditional(noInOf) {
-    var expr = parseExprOps(noInOf);
+  function parseMaybeConditional(noInOf, isStatement) {
+    var expr = parseExprOps(noInOf, isStatement);
     if (eat(_question)) {
       var node = startNodeFrom(expr);
       node.test = expr;
@@ -1772,8 +1781,8 @@
 
   // Start the precedence parser.
 
-  function parseExprOps(noInOf) {
-    return parseExprOp(parseMaybeUnary(noInOf), -1, noInOf);
+  function parseExprOps(noInOf, isStatement) {
+    return parseExprOp(parseMaybeUnary(noInOf, isStatement), -1, noInOf);
   }
 
   // Parse binary operators with the operator precedence parsing
@@ -1801,7 +1810,7 @@
 
   // Parse unary operators, both prefix and postfix.
 
-  function parseMaybeUnary(noInOf) {
+  function parseMaybeUnary(noInOf, isStatement) {
     if (tokType.prefix) {
       var node = startNode(), update = tokType.isUpdate;
       node.operator = tokVal;
@@ -1815,7 +1824,7 @@
         raise(node.start, "Deleting local variable in strict mode");
       return finishNode(node, update ? "UpdateExpression" : "UnaryExpression");
     }
-    var expr = parseExprSubscripts(noInOf);
+    var expr = parseExprSubscripts(noInOf, isStatement);
     while (tokType.postfix && !canInsertSemicolon()) {
       var node = startNodeFrom(expr);
       node.operator = tokVal;
@@ -1830,22 +1839,11 @@
 
   // Parse call, dot, and `[]`-subscript expressions.
 
-  function parseExprSubscripts(noInOf) {
-    return parseSubscripts(parseExprAtom(), false, noInOf);
+  function parseExprSubscripts(noInOf, isStatement) {
+    return parseSubscripts(parseExprAtom(), false, noInOf, isStatement);
   }
 
-  function isTypeDescriptor(expr) {
-    switch (expr.type) {
-      case "Identifier":
-      case "MemberExpression":
-        return true;
-
-      default:
-        return false;
-    }
-  }
-
-  function parseSubscripts(base, noCalls, noInOf) {
+  function parseSubscripts(base, noCalls, noInOf, isStatement) {
     if (eat(_dot)) {
       var node = startNodeFrom(base);
       node.object = base;
@@ -1862,7 +1860,7 @@
     } else if (!noCalls && eat(_parenL)) {
       var node = startNodeFrom(base);
       var args = parseExprList(_parenR, false);
-      if (isTypeDescriptor(base) && (tokType === _arrow || tokType === _braceL)) {
+      if (tokType === _arrow || tokType === _braceL) {
         var isArrow = eat(_arrow);
         parseArrowExpression(node, args);
         if (!isArrow) {
@@ -1881,17 +1879,45 @@
       node.tag = base;
       node.quasi = parseTemplate();
       return parseSubscripts(finishNode(node, "TaggedTemplateExpression"), noCalls);
-    } else if (isTypeDescriptor(base) && tokType === _name && !canInsertSemicolon() && !(noInOf && tokVal === 'of')) {
+    } else if (tokType === _name && !canInsertSemicolon() && !(noInOf && tokVal === 'of')) {
+      // TODO: Refactor
+      
       var node = startNodeFrom(base);
       var id = parseIdent(), isArrow = eat(_arrow);
       if (isArrow) {
         parseArrowExpression(node, [id]);
       } else {
-        initFunction(node);
-        node.id = id;
-        parseFunctionParams(node);
-        parseFunctionBody(node);
-        finishNode(node, "FunctionExpression");
+        var args = eat(_parenL) && parseExprList(_parenR, false);
+
+        if (args && tokType === _braceL) {
+          parseArrowExpression(node, args, id);
+          node.type = isStatement ? "FunctionDeclaration" : "FunctionExpression";
+        } else
+        if (isStatement) {
+          initVar(node, 'typed');
+          for (;;) {
+            var decl = startNodeFrom(id);
+            if (args) {
+              var callPattern = startNodeFrom(id);
+              callPattern.callee = id;
+              callPattern.arguments = args;
+              finishNode(callPattern, "CallPattern");
+              decl.id = callPattern;
+              decl.init = null;
+            } else {
+              decl.id = id;
+              checkLVal(decl.id, true);
+              decl.init = eat(_eq) ? parseExpression(true, noInOf) : null;
+            }
+            node.declarations.push(finishNode(decl, "VariableDeclarator"));
+            if (!eat(_comma)) break;
+            id = parseIdent();
+            args = eat(_parenL) && parseExprList(_parenR, false);
+          }
+          finishNode(node, "VariableDeclaration");
+        } else unexpected();
+
+        if (isStatement) semicolon();
       }
       node.binaryType = base;
       return node;
@@ -1911,7 +1937,7 @@
       return finishNode(node, "ThisExpression");
     
     case _yield:
-      if (inGenerator) return parseYield();
+      return inGenerator ? parseYield() : unexpected();
 
     case _name:
       var id = parseIdent(tokType !== _name);
@@ -2165,8 +2191,10 @@
 
   // Parse arrow function expression with given parameters.
 
-  function parseArrowExpression(node, params) {
+  function parseArrowExpression(node, params, id) {
     initFunction(node);
+
+    if (id) node.id = id;
 
     var defaults = node.defaults, hasDefaults = false;
     
