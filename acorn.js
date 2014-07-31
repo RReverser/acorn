@@ -296,6 +296,7 @@
   var _class = {keyword: "class"}, _extends = {keyword: "extends", beforeExpr: true};
   var _export = {keyword: "export"}, _import = {keyword: "import"};
   var _yield = {keyword: "yield", beforeExpr: true};
+  var _struct = {keyword: "struct"};
 
   // The keywords that denote values.
 
@@ -322,7 +323,8 @@
                       "void": {keyword: "void", prefix: true, beforeExpr: true},
                       "delete": {keyword: "delete", prefix: true, beforeExpr: true},
                       "class": _class, "extends": _extends,
-                      "export": _export, "import": _import, "yield": _yield};
+                      "export": _export, "import": _import, "yield": _yield,
+                      "struct": _struct};
 
   // Punctuation token types. Again, the `type` property is purely for debugging.
 
@@ -445,7 +447,7 @@
 
   var isEcma5AndLessKeyword = makePredicate(ecma5AndLessKeywords);
 
-  var isEcma6Keyword = makePredicate(ecma5AndLessKeywords + " let const class extends export import yield");
+  var isEcma6Keyword = makePredicate(ecma5AndLessKeywords + " let const class extends export import yield struct");
 
   var isKeyword = isEcma5AndLessKeyword;
 
@@ -1423,8 +1425,10 @@
       var maybeName = tokVal, expr = parseExpression(false, false, true);
       if (starttype === _name && expr.type === "Identifier" && eat(_colon))
         return parseLabeledStatement(node, maybeName, expr);
-      if (expr.type === "VariableDeclaration" || expr.type === "FunctionDeclaration")
+      if (expr.type === "VariableDeclaration" || expr.type === "FunctionDeclaration" || expr.type === "StructDeclaration")
         return expr;
+      if (expr.type === "StructExpression")
+        unexpected();
       return parseExpressionStatement(node, expr);
     }
   }
@@ -2030,6 +2034,9 @@
     case _bquote:
       return parseTemplate();
 
+    case _struct:
+      return parseStruct();
+
     default:
       unexpected();
     }
@@ -2542,6 +2549,20 @@
     expect(isGenerator ? _parenR : _bracketR);
     node.generator = isGenerator;
     return finishNode(node, "ComprehensionExpression");
+  }
+
+  function parseStruct() {
+    var node = startNode();
+    next();
+    initFunction(node);
+    if (tokType === _name) {
+      node.id = parseIdent();
+    }
+    if (tokType === _parenL) {
+      parseFunctionParams(node);
+    }
+    parseFunctionBody(node);
+    return finishNode(node, node.id ? "StructDeclaration" : "StructExpression");
   }
 
 });
