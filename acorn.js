@@ -1327,6 +1327,16 @@
     }
   }
 
+  // Contextual keyword helpers
+
+  function isContextual(name) {
+    return tokType === _name && tokVal === name;
+  }
+
+  function eatContextual(name) {
+    return tokVal === name && eat(_name);
+  }
+
   // Test whether a semicolon can be inserted at the current position.
 
   function canInsertSemicolon() {
@@ -1637,13 +1647,13 @@
       next();
       parseVar(init, true, varKind);
       finishNode(init, "VariableDeclaration");
-      if ((tokType === _in || (options.ecmaVersion >= 6 && tokType === _name && tokVal === "of")) && init.declarations.length === 1 &&
+      if ((tokType === _in || options.ecmaVersion >= 6 && isContextual("of")) && init.declarations.length === 1 &&
           !(isLet && init.declarations[0].init))
         return parseForIn(node, init);
       return parseFor(node, init);
     }
     var init = parseExpression(false, true);
-    if (tokType === _in || (options.ecmaVersion >= 6 && tokType === _name && tokVal === "of")) {
+    if (tokType === _in || options.ecmaVersion >= 6 && isContextual("of")) {
       checkLVal(init);
       return parseForIn(node, init);
     }
@@ -2399,12 +2409,7 @@
     expect(_braceL);
     while (!eat(_braceR)) {
       var method = startNode();
-      if (tokType === _name && tokVal === "static") {
-        next();
-        method['static'] = true;
-      } else {
-        method['static'] = false;
-      }
+      method["static"] = eatContextual("static");
       var isGenerator = eat(_star);
       parsePropertyName(method);
       if (tokType !== _parenL && !method.computed && method.key.type === "Identifier" &&
@@ -2493,8 +2498,7 @@
       node.declaration = null;
       node['default'] = false;
       node.specifiers = parseExportSpecifiers();
-      if (tokType === _name && tokVal === "from") {
-        next();
+      if (eatContextual("from")) {
         node.source = tokType === _string ? parseExprAtom() : unexpected();
       } else {
         if (isBatch) unexpected();
@@ -2525,12 +2529,7 @@
 
         var node = startNode();
         node.id = parseIdent(tokType === _default);
-        if (tokType === _name && tokVal === "as") {
-          next();
-          node.name = parseIdent(true);
-        } else {
-          node.name = null;
-        }
+        node.name = eatContextual("as") ? parseIdent(true) : null;
         nodes.push(finishNode(node, "ExportSpecifier"));
       }
     }
@@ -2592,12 +2591,7 @@
 
       var node = startNode();
       node.id = parseIdent(true);
-      if (tokType === _name && tokVal === "as") {
-        next();
-        node.name = parseIdent();
-      } else {
-        node.name = null;
-      }
+      node.name = eatContextual("as") ? parseIdent() : null;
       checkLVal(node.name || node.id, true);
       node['default'] = false;
       nodes.push(finishNode(node, "ImportSpecifier"));
